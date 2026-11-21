@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-21T09:52:56.158Z",
+  "generatedAt": "2026-11-21T20:33:32.573Z",
   "mode": "live",
   "jobs": [
     {
@@ -271552,36 +271552,6 @@
       "id": "manual-39e86addbdd2ea5842db",
       "manualUpdatedAt": "2026-10-09T05:17:08.197Z",
       "family": "数据分析、研发/工程"
-    },
-    {
-      "company": "北京天玛智控科技股份有限公司",
-      "title": "人工智能、具身智能、电气设计、机械设计、AI算法、软件开发、硬件开发、工艺研发",
-      "program": null,
-      "industry": "IT/互联网/游戏",
-      "cities": [
-        "北京"
-      ],
-      "provinces": [
-        "北京"
-      ],
-      "locations": [
-        {
-          "city": "北京",
-          "province": "北京"
-        }
-      ],
-      "cohort": "2027届",
-      "batch": "秋招专场",
-      "deadline": "2026-11-21",
-      "updatedAt": null,
-      "source": "手动导入",
-      "sourceUrl": null,
-      "applyUrl": "https://cctegjob.iguopin.com/campus",
-      "announcementUrl": "https://mp.weixin.qq.com/s/YDNrufhkI5WMGUoV0jxgzg",
-      "verification": "unverified",
-      "id": "manual-a2b029be893ae5526413",
-      "manualUpdatedAt": "2026-10-09T05:17:08.197Z",
-      "family": "算法、硬件/嵌入式、研发/工程"
     },
     {
       "company": "北京中煤矿山工程有限公司",
