@@ -311,7 +311,7 @@ export default function App() {
             : <div className="empty-state"><div className="empty-icon"><Search size={22} aria-hidden="true" /></div><h3>{tab === 'saved' && favorites.length === 0 ? '还没有收藏的岗位' : '没有找到匹配的岗位'}</h3><p>{tab === 'saved' && favorites.length === 0 ? '点击岗位右侧撕条上的“收藏”，就能在这里集中查看，并同步到本地投递看板。' : '换个关键词，或清空筛选条件后再试。'}</p>{!(tab === 'saved' && favorites.length === 0) && <button type="button" onClick={clearFilters}>清空筛选</button>}</div>}
         </main>
       </div>
-      <footer className="footer"><span>秋招信库 · 校招信息索引 · <a href="https://github.com/AdenXie/job-website" target="_blank" rel="noopener noreferrer">源码（AGPL-3.0）</a></span><span>收藏只保存在当前浏览器 · 数据来源与更新时间见每条记录</span></footer>
+      <footer className="footer"><span>秋招信库 · 校招信息索引 · <a href="https://github.com/Chloe-s-Space/job-website" target="_blank" rel="noopener noreferrer">源码（AGPL-3.0）</a></span><span>收藏只保存在当前浏览器 · 数据来源与更新时间见每条记录</span></footer>
     </div>
       {mobileFiltersOpen && <button type="button" className="filter-backdrop" onClick={() => setMobileFiltersOpen(false)} aria-label="关闭筛选面板" />}
       {profileDialog && <ProfileDialog profile={profile} onChange={setProfile} onClose={() => { setProfileDialog(null); setMobileFiltersOpen(false); }} cityNames={cityNames} industryOptions={options.industry} cohortOptions={options.cohort.filter((cohort) => /^\d{4}届$/.test(cohort))} intro={profileDialog.intro} />}

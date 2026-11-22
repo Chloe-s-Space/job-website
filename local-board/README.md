@@ -84,7 +84,7 @@ v1.2.0 及更早的版本没有一键更新功能，需要按上面的步骤手�
 
 ## 许可
 
-本地看板是秋招信库的一部分，源码按 GNU Affero General Public License v3.0 only（AGPL-3.0-only）开源，许可证全文见压缩包里的 `LICENSE`，源码在 [GitHub](https://github.com/AdenXie/job-website/tree/main/local-board)。
+本地看板是秋招信库的一部分，源码按 GNU Affero General Public License v3.0 only（AGPL-3.0-only）开源，许可证全文见压缩包里的 `LICENSE`，源码在 [GitHub](https://github.com/Chloe-s-Space/job-website/tree/main/local-board)。
 
 ## 技术说明
 

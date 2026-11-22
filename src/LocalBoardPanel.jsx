@@ -4,7 +4,7 @@ import boardConfig from '../local-board/config.json';
 import { encodeSync } from '../local-board/public/sync-codec.js';
 
 const BOARD_URL = `http://127.0.0.1:${boardConfig.port}/`;
-const GUIDE_URL = 'https://github.com/AdenXie/job-website/blob/main/local-board/README.md';
+const GUIDE_URL = 'https://github.com/Chloe-s-Space/job-website/blob/main/local-board/README.md';
 
 /** “我的收藏”里的本地投递看板入口：同步收藏、下载看板。数据放在看板地址的 # 后面，不经过任何服务器。 */
 export default function LocalBoardPanel({ jobs }) {
