@@ -29,7 +29,6 @@ input::placeholder { color: var(--g-500); }
 .topbar-nav { margin-left: auto; display: flex; align-items: center; gap: var(--s-1); }
 .topbar-nav a { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 var(--s-3); border-radius: var(--r-sm); color: var(--g-600); font-size: var(--t-md); font-weight: 600; text-decoration: none; transition: background var(--d-fast), color var(--d-fast); }
 .topbar-nav a:hover { background: var(--g-50); color: var(--ink); }
-.topbar-nav img { border-radius: 50%; }
 .topbar .head-rule { max-width: none; }
 
 /* —— 主体 —— */

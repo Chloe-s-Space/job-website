@@ -265,7 +265,6 @@ export default function App() {
         <nav className="topbar-nav" aria-label="站内工具">
           <a href={`${base}insights/`}><ChartColumn size={16} aria-hidden="true" /><span>数据洞察</span></a>
           <a href={`${base}resume/`}><FileText size={16} aria-hidden="true" /><span>简历生成器</span></a>
-          <a className="blog-link" href="https://www.adenxie.com.cn/" target="_blank" rel="noopener noreferrer"><img src={`${base}blog-avatar.jpg`} width="24" height="24" alt="" decoding="async" /><span>我的主页</span><span className="sr-only">（在新标签页打开）</span></a>
         </nav>
       </div>
       <div className="head-rule" aria-hidden="true" />
