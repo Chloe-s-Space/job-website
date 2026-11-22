@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Download, ExternalLink, SquareKanban } from 'lucide-react';
 import boardConfig from '../local-board/config.json';
 import { encodeSync } from '../local-board/public/sync-codec.js';
@@ -10,6 +10,15 @@ const GUIDE_URL = 'https://github.com/Chloe-s-Space/job-website/blob/main/local-
 export default function LocalBoardPanel({ jobs }) {
   const [message, setMessage] = useState(null);
   const [fallbackUrl, setFallbackUrl] = useState('');
+
+  // 从其他页面的“本地看板”按钮跳过来（地址带 #local-board-guide）：展开下载与使用说明并滚动过去
+  useEffect(() => {
+    if (window.location.hash !== '#local-board-guide') return;
+    const guide = document.getElementById('local-board-guide');
+    if (!guide) return;
+    guide.open = true;
+    guide.closest('.local-board-panel')?.scrollIntoView({ block: 'start' });
+  }, []);
 
   const sync = async () => {
     setFallbackUrl('');

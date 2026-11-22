@@ -251,7 +251,7 @@ input::placeholder { color: var(--g-500); }
 .profile-clear:disabled { color: var(--g-400); }
 
 /* —— 我的收藏：本地投递看板入口 —— */
-.local-board-panel { display: grid; gap: var(--s-3); margin-bottom: var(--s-4); padding: var(--s-5); border-radius: var(--r-md); background: var(--paper); box-shadow: var(--shadow-paper); }
+.local-board-panel { display: grid; gap: var(--s-3); margin-bottom: var(--s-4); padding: var(--s-5); border-radius: var(--r-md); background: var(--paper); box-shadow: var(--shadow-paper); scroll-margin-top: 84px; }
 .local-board-head { display: flex; gap: var(--s-3); }
 .local-board-head > svg { flex: none; margin-top: 3px; color: var(--accent); }
 .local-board-head h3 { font: 900 var(--t-lg)/1.4 var(--font-head); }

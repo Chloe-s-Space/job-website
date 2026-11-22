@@ -18,8 +18,8 @@ a { color: inherit; text-decoration: none; }
 .rz-back-name { font: 900 var(--t-lg)/1 var(--font-head); letter-spacing: 0.04em; color: var(--ink); }
 .rz-heading { padding-left: var(--s-4); border-left: 1px solid var(--g-200); font: 900 var(--t-lg)/1.6 var(--font-head); letter-spacing: 0.04em; white-space: nowrap; }
 .rz-actions { margin-left: auto; display: flex; align-items: center; gap: var(--s-2); }
-.rz-actions button { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 var(--s-3); border: 1px solid var(--g-200); border-radius: var(--r-sm); background: var(--paper); color: var(--g-700); font-size: var(--t-sm); font-weight: 600; white-space: nowrap; transition: background var(--d-fast), border-color var(--d-fast); }
-.rz-actions button:hover { background: var(--g-50); border-color: var(--g-300); }
+.rz-actions button, .rz-actions .rz-board-link { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 var(--s-3); border: 1px solid var(--g-200); border-radius: var(--r-sm); background: var(--paper); color: var(--g-700); font-size: var(--t-sm); font-weight: 600; white-space: nowrap; transition: background var(--d-fast), border-color var(--d-fast); }
+.rz-actions button:hover, .rz-actions .rz-board-link:hover { background: var(--g-50); border-color: var(--g-300); }
 .rz-actions .primary { background: var(--accent); border-color: var(--accent); color: var(--paper); font-size: var(--t-md); font-weight: 700; padding: 0 var(--s-4); }
 .rz-actions .primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
 .rz-pane-tabs { display: none; }
@@ -144,8 +144,8 @@ a { color: inherit; text-decoration: none; }
   .rz-topbar-row { padding: var(--s-2) var(--s-3); gap: var(--s-2); }
   .rz-heading { display: none; }
   .rz-actions { gap: 6px; }
-  .rz-actions button:not(.primary) span { display: none; }
-  .rz-actions button:not(.primary) { width: 36px; padding: 0; justify-content: center; }
+  .rz-actions button:not(.primary) span, .rz-actions .rz-board-link span { display: none; }
+  .rz-actions button:not(.primary), .rz-actions .rz-board-link { width: 36px; padding: 0; justify-content: center; }
   .rz-pane-tabs { flex: none; position: relative; display: grid; grid-template-columns: 1fr 1fr; background: var(--paper); border-bottom: 1px solid var(--g-150); }
   .rz-pane-tabs button { display: flex; align-items: center; justify-content: center; gap: 6px; height: 42px; border: 0; border-bottom: 2px solid transparent; background: none; color: var(--g-500); font-size: var(--t-md); font-weight: 700; transition: color var(--d-base), border-color var(--d-base); }
   .rz-pane-tabs button.active { color: var(--accent-deep); border-color: var(--accent); }
@@ -158,6 +158,9 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 520px) {
   .rz-topbar-row { padding: var(--s-2); gap: var(--s-2); }
   .rz-actions { gap: 4px; }
+  /* 加了“本地看板”后 375px 宽放不下，窄屏把图标按钮缩到 32px */
+  .rz-actions button:not(.primary), .rz-actions .rz-board-link { width: 32px; height: 34px; }
+  .rz-actions .primary { height: 34px; padding: 0 var(--s-3); }
   .rz-back-name, .rz-back .brand-seal { display: none; }
   .rz-back { width: 36px; padding: 0; justify-content: center; }
 }

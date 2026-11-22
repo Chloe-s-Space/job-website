@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, SquareKanban } from 'lucide-react';
 
 // 省份方块图：每个省一格，位置大致对应地理方位，不是真实地图
 const PROVINCE_TILES = {
@@ -169,6 +169,7 @@ export default function InsightsApp() {
       <div className="topbar-inner">
         <a className="brand" href={import.meta.env.BASE_URL} aria-label="秋招信库首页"><span className="brand-seal" aria-hidden="true">秋</span><span className="brand-name">秋招信库</span></a>
         <span className="page-name">数据洞察</span>
+        <a className="board-link" href={`${import.meta.env.BASE_URL}?tab=saved#local-board-guide`}><SquareKanban size={16} aria-hidden="true" /><span>本地看板</span></a>
         <a className="back-link" href={import.meta.env.BASE_URL}><ArrowLeft size={16} aria-hidden="true" /><span>返回岗位库</span></a>
       </div>
       <div className="head-rule" aria-hidden="true" />

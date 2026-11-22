@@ -30,6 +30,10 @@ a { color: inherit; text-decoration: none; }
 .page-name { padding-left: var(--s-4); border-left: 1px solid var(--g-200); font: 900 var(--t-lg)/1.6 var(--font-head); letter-spacing: 0.04em; }
 .back-link { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 var(--s-3); border-radius: var(--r-sm); color: var(--g-600); font-size: var(--t-md); font-weight: 600; white-space: nowrap; transition: background var(--d-fast), color var(--d-fast); }
 .back-link:hover { background: var(--g-50); color: var(--ink); }
+/* 本地看板入口：跳到首页“我的收藏”里的下载与使用说明 */
+.board-link { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 var(--s-3); border-radius: var(--r-sm); color: var(--g-600); font-size: var(--t-md); font-weight: 600; white-space: nowrap; transition: background var(--d-fast), color var(--d-fast); }
+.board-link:hover { background: var(--g-50); color: var(--ink); }
+.board-link + .back-link { margin-left: 0; }
 
 .workspace { max-width: var(--page); margin: 0 auto; padding: 0 var(--s-6); }
 .intro { display: grid; gap: var(--s-2); padding: var(--s-8) 0 var(--s-6); }
@@ -112,8 +116,8 @@ a.tile:hover { transform: translateY(-1px); box-shadow: 0 0 0 2px var(--accent);
   .topbar-inner { height: 54px; }
   .topbar-inner, .workspace, .footer { padding-left: var(--s-4); padding-right: var(--s-4); }
   .page-name { display: none; }
-  .back-link span { display: none; }
-  .back-link { width: 40px; justify-content: center; padding: 0; }
+  .back-link span, .board-link span { display: none; }
+  .back-link, .board-link { width: 40px; justify-content: center; padding: 0; }
   .intro { padding: var(--s-6) 0 var(--s-5); }
   .intro h1 { font-size: var(--t-2xl); }
   .intro-line { font-size: var(--t-base); }

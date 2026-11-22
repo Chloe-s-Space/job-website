@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Download, Eye, FileDown, FileUp, ImagePlus, Link as LinkIcon, Mail, MapPin, PencilLine, Phone, Plus, RotateCcw, Sparkles, Trash2, Upload, X } from 'lucide-react';
+import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Download, SquareKanban, Eye, FileDown, FileUp, ImagePlus, Link as LinkIcon, Mail, MapPin, PencilLine, Phone, Plus, RotateCcw, Sparkles, Trash2, Upload, X } from 'lucide-react';
 import { emptyResume, normalizeResume, sampleResume, uid } from './sample.js';
 import { useFlip } from './flip.js';
 
@@ -208,6 +208,7 @@ export default function ResumeApp() {
       <a className="rz-back" href={import.meta.env.BASE_URL} aria-label="返回秋招信库"><ArrowLeft size={16} aria-hidden="true" /><span className="brand-seal" aria-hidden="true">秋</span><span className="rz-back-name">秋招信库</span></a>
       <strong className="rz-heading">简历生成器</strong>
       <div className="rz-actions">
+        <a className="rz-board-link" href={`${import.meta.env.BASE_URL}?tab=saved#local-board-guide`} title="下载和使用本地投递看板"><SquareKanban size={15} aria-hidden="true" /><span>本地看板</span></a>
         <button type="button" onClick={() => replaceAll(sampleResume(), '用示例内容替换当前简历？')} title="载入示例"><RotateCcw size={15} /><span>示例</span></button>
         <button type="button" onClick={() => replaceAll(emptyResume(style), '清空当前简历内容？')} title="清空内容"><Trash2 size={15} /><span>清空</span></button>
         <button type="button" onClick={() => pdfRef.current.click()} title="上传已有的 PDF 简历，自动识别内容"><FileUp size={15} /><span>上传 PDF</span></button>

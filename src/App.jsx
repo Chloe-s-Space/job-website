@@ -20,7 +20,9 @@ function readUrlState() {
   if (!DEADLINE_OPTIONS.includes(filters.deadline)) filters.deadline = '';
   // 排序方式可以写进网址；画像只存在本地，不进网址。from=resume 表示从简历生成器跳转过来
   const sort = SORT_OPTIONS.includes(params.get('sort')) ? params.get('sort') : 'updated';
-  return { filters, query: (params.get('q') || '').slice(0, 60), sort, fromResume: params.get('from') === 'resume' };
+  // tab=saved 用于从数据洞察、简历生成器的“本地看板”按钮直接打开“我的收藏”
+  const tab = ['all', 'soon', 'saved'].includes(params.get('tab')) ? params.get('tab') : 'all';
+  return { filters, query: (params.get('q') || '').slice(0, 60), sort, tab, fromResume: params.get('from') === 'resume' };
 }
 
 const industriesOf = (job) => [...new Set(fieldValues(job.industry).map(normalizeIndustry))];
@@ -159,7 +161,7 @@ export default function App() {
   const [initialUrl] = useState(readUrlState);
   const [query, setQuery] = useState(initialUrl.query);
   const [filters, setFilters] = useState(initialUrl.filters);
-  const [tab, setTab] = useState('all');
+  const [tab, setTab] = useState(initialUrl.tab);
   const [sort, setSort] = useState(initialUrl.sort);
   const [profile, setProfile] = useState(loadProfile);
   const [profileDialog, setProfileDialog] = useState(null);
