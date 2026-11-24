@@ -29,7 +29,7 @@ export function ProfileCard({ profile, active, onEdit, onRecommend }) {
   if (!hasProfile(profile)) {
     return <section className="profile-card is-empty">
       <div className="profile-card-head"><Sparkles size={16} /><strong>为你推荐</strong></div>
-      <p>设置求职方向、城市和届别，按相关程度排序岗位。只在当前浏览器计算，不上传简历。</p>
+      <p>告诉我们你的方向、城市和届别，就按合不合适来排。只在这个浏览器里算，简历不会上传。</p>
       <button type="button" className="profile-primary" onClick={onEdit}>设置求职画像</button>
     </section>;
   }
@@ -65,38 +65,38 @@ export function ProfileDialog({ profile, onChange, onClose, cityNames, industryO
   const edit = (field, value) => onChange(editProfile(current, field, value));
   const toggleFamily = (name) => {
     if (current.families.includes(name)) edit('families', current.families.filter((item) => item !== name));
-    else if (current.families.length >= MAX_FAMILIES) setMessage({ warn: true, text: `最多选择 ${MAX_FAMILIES} 个方向，先去掉一个再添加。` });
+    else if (current.families.length >= MAX_FAMILIES) setMessage({ warn: true, text: `最多选 ${MAX_FAMILIES} 个方向，先去掉一个再加。` });
     else edit('families', [...current.families, name]);
   };
   const addCity = () => {
     const city = cityInput.trim().replace(/市$/, '');
     if (!city) return;
-    if (!cityNames.includes(city)) { setMessage({ warn: true, text: `岗位库里没有“${city}”的岗位，请从下拉建议里选择城市。` }); return; }
+    if (!cityNames.includes(city)) { setMessage({ warn: true, text: `岗位库里暂时没有“${city}”的岗位，可以从下拉建议里挑一个城市。` }); return; }
     if (!current.cities.includes(city)) edit('cities', [...current.cities, city]);
     setCityInput('');
   };
   const fromResume = () => {
     if (!resume) return;
     onChange(mergeDetected(current, detectProfile(resume, cityNames), { source: 'resume', reset: true }));
-    setMessage({ text: '已从简历生成器里的简历重新识别，手动修改已清除。识别结果可能不准，请逐项核对。' });
+    setMessage({ text: '已按简历生成器里的简历重新识别，之前手动改的已清除。识别不一定准，看一眼再用。' });
   };
   const fromPdf = async (event) => {
     const file = event.target.files[0];
     event.target.value = '';
     if (!file) return;
     setBusy(true);
-    setMessage({ text: '正在识别 PDF…' });
+    setMessage({ text: '正在读这份 PDF' });
     try {
       const { importPdf } = await import('../resume/pdf-import.js');
       const result = await importPdf(file);
-      if (!result) setMessage({ warn: true, text: '这份 PDF 里没有可提取的文字（可能是扫描件或图片），请手动设置画像。' });
+      if (!result) setMessage({ warn: true, text: '这份 PDF 里读不到文字，可能是扫描件或图片。手动选一下也很快。' });
       else {
         // 只用识别结果生成画像，不保存简历内容，也不改动简历生成器里的简历
         onChange(mergeDetected(current, detectProfile(result, cityNames), { source: 'pdf', reset: true }));
-        setMessage({ text: '已从 PDF 识别画像。PDF 内容没有保存，也没有上传。识别结果可能不准，请逐项核对。' });
+        setMessage({ text: '已从 PDF 识别出画像。PDF 本身没有保存，也没有上传。识别不一定准，看一眼再用。' });
       }
     } catch {
-      setMessage({ warn: true, text: '无法读取这个 PDF，文件可能已损坏或设有密码。' });
+      setMessage({ warn: true, text: '这份 PDF 打不开，可能已损坏或设了密码。' });
     } finally {
       setBusy(false);
     }
@@ -105,7 +105,7 @@ export function ProfileDialog({ profile, onChange, onClose, cityNames, industryO
   return <div className="profile-overlay" onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }}>
     <div className="profile-dialog" role="dialog" aria-modal="true" aria-labelledby="profile-title" tabIndex={-1} ref={dialogRef}>
       <header className="profile-dialog-head">
-        <div><h2 id="profile-title">求职画像</h2><p>只保存方向、城市、届别和行业，存在当前浏览器，不会上传。</p></div>
+        <div><h2 id="profile-title">求职画像</h2><p>只记方向、城市、届别和行业，存在这个浏览器里，不会上传。</p></div>
         <button type="button" className="profile-close" onClick={onClose} aria-label="关闭"><X size={20} /></button>
       </header>
       <div className="profile-dialog-body">
@@ -153,7 +153,7 @@ export function ProfileDialog({ profile, onChange, onClose, cityNames, industryO
         </fieldset>
       </div>
       <footer className="profile-dialog-foot">
-        <button type="button" className="profile-clear" onClick={() => { onChange(null); setMessage({ text: '画像已清除。' }); }} disabled={!profile}><Trash2 size={15} />清除画像</button>
+        <button type="button" className="profile-clear" onClick={() => { onChange(null); setMessage({ text: '画像已清除，排序回到最近更新。' }); }} disabled={!profile}><Trash2 size={15} />清除画像</button>
         <button type="button" className="profile-primary" onClick={onClose}>完成</button>
       </footer>
     </div>

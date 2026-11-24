@@ -8,3 +8,5 @@ dist/
 local-board/data/
 local-board/update-backups/
 local-board/.update-staging/
+# 本地看板的思源宋体分片：打包时从 node_modules 复制，不进仓库
+local-board/public/fonts/noto-serif-sc-*.woff2

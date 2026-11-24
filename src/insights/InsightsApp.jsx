@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { ArrowLeft, SquareKanban } from 'lucide-react';
+import { ArrowLeft, FileText, SquareKanban } from 'lucide-react';
 
 // 省份方块图：每个省一格，位置大致对应地理方位，不是真实地图
 const PROVINCE_TILES = {
@@ -60,11 +60,21 @@ function observeReveal(node) {
 function Card({ title, caliber, wide, children }) {
   const ref = useRef(null);
   useEffect(() => observeReveal(ref.current), []);
-  return <section ref={ref} className={wide ? 'card wide' : 'card'}>
+  return <section ref={ref} className={wide ? 'chart wide' : 'chart'}>
     <h2>{title}</h2>
     <p className="caliber">{caliber}</p>
     {children}
   </section>;
+}
+
+// 整理时间：今天 / 昨天 / 某月某日 + 几点
+function refreshedText(iso, today) {
+  if (!iso) return '';
+  const parts = Object.fromEntries(new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', hourCycle: 'h23' }).formatToParts(new Date(iso)).map((part) => [part.type, part.value]));
+  const date = `${parts.year}-${parts.month}-${parts.day}`;
+  const yesterday = chinaDate.format(new Date(Date.parse(`${today}T12:00:00+08:00`) - 86400000));
+  const day = date === today ? '今天' : date === yesterday ? '昨天' : `${Number(parts.month)} 月 ${Number(parts.day)} 日`;
+  return `${day} ${Number(parts.hour)} 点整理过一遍`;
 }
 
 function BarList({ rows, note, link }) {
@@ -78,8 +88,8 @@ function BarList({ rows, note, link }) {
       {note?.(index) && <small className="bar-note">{note(index)}</small>}
     </>;
     return <li key={name}>{href
-      ? <a className="bar-row" href={href} title={`${name}：${number(count)} 条，点击在岗位库中查看`}>{content}</a>
-      : <div className="bar-row" title={`${name}：${number(count)} 条`}>{content}</div>}</li>;
+      ? <a className="bar-row" href={href} title={`${name}：${number(count)} 个，点一下在岗位库里看`}>{content}</a>
+      : <div className="bar-row" title={`${name}：${number(count)} 个`}>{content}</div>}</li>;
   })}</ol>;
 }
 
@@ -93,8 +103,8 @@ function ProvinceTiles({ provinces }) {
         const style = { gridColumn: column, gridRow: row + 1 };
         const content = <><strong>{name}</strong><span>{number(count)}</span></>;
         return count
-          ? <a key={name} className={`tile s${step(count)}`} style={style} href={jobsLink('province', name)} title={`${name}：${number(count)} 条，点击在岗位库中查看`}>{content}</a>
-          : <div key={name} className="tile s0" style={style} title={`${name}：0 条`}>{content}</div>;
+          ? <a key={name} className={`tile s${step(count)}`} style={style} href={jobsLink('province', name)} title={`${name}：${number(count)} 个，点一下在岗位库里看`}>{content}</a>
+          : <div key={name} className="tile s0" style={style} title={`${name}：0 个`}>{content}</div>;
       })}
     </div>
     <div className="tile-legend" aria-hidden="true">
@@ -125,7 +135,7 @@ function DeadlineChart({ deadlines, total, today }) {
   const y = (value) => pad.top + (1 - value / top) * (height - pad.top - pad.bottom);
   const ticks = Array.from({ length: Math.round(top / tick) + 1 }, (_, index) => index * tick);
   return <>
-    <p className="coverage"><strong>基于 {number(deadlines.withDeadline)} 条有截止日期的岗位</strong>，只占全部 {number(total)} 条的 {percent(deadlines.withDeadline / total)}；其余岗位没有提供截止日期，不代表仍在招聘。今天及以后截止的共 {number(upcoming)} 条，其中 8 周以后 {number(later)} 条。</p>
+    <p className="coverage">只统计了写明截止日期的 <span className="num">{number(deadlines.withDeadline)}</span> 个岗位，占全部 <span className="num">{number(total)}</span> 个的 <span className="num">{percent(deadlines.withDeadline / total)}</span>；其余岗位没有写截止日期，不代表还在招。今天及以后截止的一共 <span className="num">{number(upcoming)}</span> 个，其中八周以后的 <span className="num">{number(later)}</span> 个。</p>
     <div className="column-chart" ref={boxRef}>
       <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} role="img" aria-label="未来 8 周每周截止的岗位数">
         {ticks.map((value) => <g key={value}><line className="grid" x1={pad.left} x2={width - pad.right} y1={y(value)} y2={y(value)} /><text className="axis" x={pad.left - 6} y={y(value) + 4} textAnchor="end">{number(value)}</text></g>)}
@@ -133,7 +143,7 @@ function DeadlineChart({ deadlines, total, today }) {
           const x = pad.left + index * band + (band - barWidth) / 2;
           const barHeight = y(0) - y(week.count);
           const radius = Math.min(4, barHeight);
-          return <g key={week.start} onMouseEnter={() => setActive(index)} onMouseLeave={() => setActive(null)} onFocus={() => setActive(index)} onBlur={() => setActive(null)} tabIndex={0} aria-label={`${week.start} 至 ${week.end}：${week.count} 条`}>
+          return <g key={week.start} onMouseEnter={() => setActive(index)} onMouseLeave={() => setActive(null)} onFocus={() => setActive(index)} onBlur={() => setActive(null)} tabIndex={0} aria-label={`${week.start} 至 ${week.end}：${week.count} 个`}>
             <rect className="hit" x={pad.left + index * band} y={pad.top} width={band} height={height - pad.top - pad.bottom} />
             {week.count > 0 && <path className={active === index ? 'column active' : 'column'} style={{ '--n': index }} d={`M${x},${y(0)} V${y(week.count) + radius} Q${x},${y(week.count)} ${x + radius},${y(week.count)} H${x + barWidth - radius} Q${x + barWidth},${y(week.count)} ${x + barWidth},${y(week.count) + radius} V${y(0)} Z`} />}
             {(band >= 46 || index % 2 === 0) && <text className="axis" x={pad.left + index * band + band / 2} y={height - 10} textAnchor="middle">{index === 0 ? '本周' : shortDate(week.start)}</text>}
@@ -143,7 +153,7 @@ function DeadlineChart({ deadlines, total, today }) {
         <line className="baseline" x1={pad.left} x2={width - pad.right} y1={y(0)} y2={y(0)} />
       </svg>
       {active !== null && <div className="tooltip" style={{ left: `${((pad.left + active * band + band / 2) / width) * 100}%` }}>
-        <strong>{shortDate(weeks[active].start)}–{shortDate(weeks[active].end)}</strong>{number(weeks[active].count)} 条截止
+        <strong>{shortDate(weeks[active].start)}–{shortDate(weeks[active].end)}</strong>{number(weeks[active].count)} 个截止
       </div>}
     </div>
   </>;
@@ -162,44 +172,50 @@ export default function InsightsApp() {
   }, []);
 
 
-  const updated = data?.generatedAt ? new Date(data.generatedAt).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false }) : '未提供';
+  const refreshed = refreshedText(data?.generatedAt, today);
+  const base = import.meta.env.BASE_URL;
 
   return <div className="page">
     <header className="topbar">
       <div className="topbar-inner">
-        <a className="brand" href={import.meta.env.BASE_URL} aria-label="秋招信库首页"><span className="brand-seal" aria-hidden="true">秋</span><span className="brand-name">秋招信库</span></a>
+        <a className="brand" href={base} aria-label="秋招信库首页"><span className="brand-seal" aria-hidden="true">秋</span><span className="brand-name">秋招信库</span></a>
         <span className="page-name">数据洞察</span>
-        <a className="board-link" href={`${import.meta.env.BASE_URL}?tab=saved#local-board-guide`}><SquareKanban size={16} aria-hidden="true" /><span>本地看板</span></a>
-        <a className="back-link" href={import.meta.env.BASE_URL}><ArrowLeft size={16} aria-hidden="true" /><span>返回岗位库</span></a>
+        <nav className="topbar-nav" aria-label="站内工具">
+          <a href={base}><ArrowLeft size={16} aria-hidden="true" /><span>岗位库</span></a>
+          <a href={`${base}resume/`}><FileText size={16} aria-hidden="true" /><span>简历生成器</span></a>
+          <a href={`${base}?tab=saved#local-board-guide`}><SquareKanban size={16} aria-hidden="true" /><span>本地看板</span></a>
+        </nav>
       </div>
-      <div className="head-rule" aria-hidden="true" />
     </header>
 
     <main className="workspace">
-      <section className="intro">
-        <h1>今年秋招的岗位，都在哪里</h1>
-        {data ? <p className="intro-line">收录 <strong>{number(data.totals.jobs)}</strong> 条岗位、<strong>{number(data.totals.companies)}</strong> 家公司，覆盖 <strong>{number(data.totals.cities)}</strong> 个城市（{data.totals.provinces} 个省级地区）· 数据更新于 {updated}</p> : <p className="intro-line">{failed ? "统计数据暂时无法加载，请稍后刷新。" : "正在读取统计数据…"}</p>}
-        <p className="intro-sub">{data && `${percent(data.companies.singleRecord / data.totals.companies)} 的公司只有 1 条记录；统计约每 12 小时随岗位同步更新。`}每张图下方写明了计数口径，一条岗位可能同时计入多个城市、行业或岗位族。点击条目可跳到岗位库查看对应岗位；岗位库不显示已截止的记录，数量可能略少。</p>
+      <section className="opener">
+        <h1>这一季的机会，都去了哪里</h1>
+        {data
+          ? <p className="standfirst">收录了 <span className="num">{number(data.totals.jobs)}</span> 个岗位、<span className="num">{number(data.totals.companies)}</span> 家公司，分布在 <span className="num">{number(data.totals.cities)}</span> 个城市、<span className="num">{data.totals.provinces}</span> 个省级地区。</p>
+          : <p className="standfirst">{failed ? '统计暂时没拿出来，可能是网络慢了一点，刷新一下试试？' : '正在把统计拿出来。'}</p>}
+        {refreshed && <p className="opener-note note">{refreshed}，大约每 12 小时跟着岗位库更新一次。</p>}
+        <p className="opener-sub">{data && `${percent(data.companies.singleRecord / data.totals.companies)} 的公司只有 1 条记录。`}每张图下面写着是怎么数的：一个岗位可能同时算进多个城市、行业或岗位族。点条目可以跳回岗位库看具体岗位；岗位库不显示已截止的，数量可能少一点。</p>
       </section>
 
       {data && <>
         <div className="grid">
-          <Card title="岗位最多的城市" caliber={`一条岗位列出多个城市时，每个城市各计 1 次（${percent(data.totals.multiCityJobs / data.totals.jobs)} 的岗位不止一个城市）。“全国”${number(data.broadLocations[0][1])} 条、“海外”${number(data.broadLocations[1][1])} 条不是具体城市，不参与排行；${number(data.totals.noCityJobs)} 条未提供地点。`}>
+          <Card title="岗位最多的城市" caliber={`一个岗位列出多个城市时，每个城市各计 1 次（${percent(data.totals.multiCityJobs / data.totals.jobs)} 的岗位不止一个城市）。“全国”${number(data.broadLocations[0][1])} 个、“海外”${number(data.broadLocations[1][1])} 个不是具体城市，不参与排行；${number(data.totals.noCityJobs)} 个没写地点。`}>
             <BarList rows={data.cities.slice(0, 15)} link={(name) => jobsLink('city', name)} />
           </Card>
-          <Card title="省份分布" caliber="按岗位所在城市归到省级地区，同一条岗位在一个省内的多个城市只计 1 次。方块位置只表示大致方位，不是地图。">
+          <Card title="省份分布" caliber="按岗位所在城市归到省级地区，同一个岗位在一个省内的多个城市只计 1 次。方块位置只表示大致方位，不是地图。">
             <ProvinceTiles provinces={data.provinces} />
           </Card>
-          <Card title="行业分布" caliber="行业来自数据源标注，写法不同的同一行业已合并（如“通信/电子/半导体”并入“电子/通信/半导体”）；一条岗位标注多个行业时各计 1 次。">
+          <Card title="行业分布" caliber="行业来自数据源标注，写法不同的同一行业已合并（如“通信/电子/半导体”并入“电子/通信/半导体”）；一个岗位标注多个行业时各计 1 次。">
             <BarList rows={data.industries.slice(0, 15)} link={(name) => jobsLink('industry', name)} />
           </Card>
-          <Card title="岗位族分布" caliber={`按岗位标题里的职位关键词归类，一条岗位可属于多个岗位族；对不上任何关键词的归为“其他”，占全部岗位的 ${percent(data.otherFamilyShare)}。小字为该岗位族岗位最多的城市。`}>
+          <Card title="岗位族分布" caliber={`按岗位标题里的职位关键词归类，一个岗位可属于多个岗位族；对不上任何关键词的归为“其他”，占全部岗位的 ${percent(data.otherFamilyShare)}。小字为该岗位族岗位最多的城市。`}>
             <BarList rows={data.families.map((family) => [family.name, family.count])} link={(name) => jobsLink('family', name)} note={(index) => data.families[index].topCities.length ? `最多：${data.families[index].topCities.map(([city, count]) => `${city} ${number(count)}`).join(' · ')}` : ''} />
           </Card>
-          <Card title="未来 8 周的截止日期" caliber="按截止日期所在的周统计，从今天起每 7 天一组。" wide>
+          <Card title="未来八周的截止日期" caliber="按截止日期所在的周统计，从今天起每 7 天一组。" wide>
             <DeadlineChart deadlines={data.deadlines} total={data.totals.jobs} today={today} />
           </Card>
-          <Card title="届别分布" caliber="届别来自数据源标注；一条岗位同时面向多届时各计 1 次，无法识别的写法归为“其他”。">
+          <Card title="届别分布" caliber="届别来自数据源标注；一个岗位同时面向多届时各计 1 次，无法识别的写法归为“其他”。">
             <BarList rows={data.cohorts} link={(name) => (name === '其他' ? null : jobsLink('cohort', name))} />
           </Card>
           <Card title="记录最多的公司" caliber={`按公司的岗位记录条数排行，一条记录通常是一次招聘公告，不等于招聘人数。岗位库里 ${number(data.companies.singleRecord)} 家公司只有 1 条记录，排行差距很小。`}>
@@ -210,7 +226,7 @@ export default function InsightsApp() {
     </main>
 
     <footer className="footer">
-      <p><strong>数据说明</strong>招聘状态未经逐条人工核验，投递前请以企业公告为准。已知截止日期过期的记录会在同步时移除；没有截止日期的记录无法据此判断是否仍在招聘。</p>
+      <p><strong>数据说明</strong>招聘状态没有逐条人工核对，投递前以企业公告为准。已经过了截止日期的记录会在同步时移除；没写截止日期的记录，没法据此判断还在不在招。</p>
       <p>岗位数据来自 <a href="https://developer.offerxiansheng.com/docs/quickstart" target="_blank" rel="noopener noreferrer">offer先生校招 API</a> 与 <a href="https://github.com/xixicc186/xixicc2027" target="_blank" rel="noopener noreferrer">xixicc2027</a>，以及本站手动整理的校招公告（记录中标注为“手动导入”）{data && `；本次统计中三者分别为 ${data.sources.map(([name, count]) => `${name} ${number(count)} 条`).join('、')}`}。每条记录的来源与原始链接见岗位库。</p>
       <p>秋招信库 · 招聘信息索引 · <a href="https://github.com/Chloe-s-Space/job-website" target="_blank" rel="noopener noreferrer">源码（AGPL-3.0）</a></p>
     </footer>

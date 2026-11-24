@@ -29,10 +29,10 @@ export default function LocalBoardPanel({ jobs }) {
       if (tab) {
         tab.opener = null;
         tab.location.href = url;
-        setMessage({ text: `已在新标签页打开本地看板，确认后即可导入 ${jobs.length} 个岗位。如果新标签页打不开，请先启动本地看板。` });
+        setMessage({ text: `已在新标签页打开本地看板，在那边确认一下就能导入 ${jobs.length} 个岗位。新标签页打不开的话，先启动本地看板。` });
       } else {
         setFallbackUrl(url);
-        setMessage({ text: '浏览器拦截了新标签页，请点击下面的链接打开本地看板。' });
+        setMessage({ text: '浏览器拦下了新标签页，点下面的链接打开本地看板就好。' });
       }
     } catch (error) {
       tab?.close();
@@ -45,11 +45,12 @@ export default function LocalBoardPanel({ jobs }) {
       <SquareKanban size={18} aria-hidden="true" />
       <div>
         <h3 id="local-board-title">本地投递看板</h3>
-        <p>把收藏的岗位同步到你电脑上的看板，记录投递进度、笔试面试时间和备注。数据只保存在你的电脑里，需要在电脑上使用。</p>
+        <p>把收下的岗位同步到你电脑上的看板，记录投递进度、笔试面试时间和备注。数据只存在你的电脑里，需要在电脑上用。</p>
       </div>
     </div>
     <div className="local-board-actions">
       <button type="button" className="local-board-sync" onClick={sync} disabled={!jobs.length}>同步到本地看板{jobs.length ? `（${jobs.length}）` : ''}</button>
+      <span className="local-board-hint note">放到你电脑上的看板里，慢慢整理。</span>
       <a className="local-board-hint" href="#local-board-guide" onClick={() => { document.getElementById('local-board-guide').open = true; }}>需要先下载并启动本地看板</a>
     </div>
     {message && <p className={message.warn ? 'local-board-message warn' : 'local-board-message'} role="status">{message.text}{fallbackUrl && <> <a href={fallbackUrl} target="_blank" rel="noopener noreferrer">打开本地看板</a></>}</p>}

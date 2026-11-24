@@ -6,6 +6,7 @@ import { mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from 'n
 import { join, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { zipSync } from 'fflate';
+import { boardFontFiles } from './build-fonts.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const source = join(root, 'local-board');
@@ -40,6 +41,8 @@ export function buildZip() {
     const mode = EXECUTABLE.test(name) ? 0o100755 : 0o100644;
     files[`local-board/${name}`] = [content(name), { os: 3, attrs: (mode << 16) >>> 0, mtime: statSync(join(source, name)).mtime }];
   }
+  // 思源宋体分片和 Source Serif 4 不进仓库，打包时从 node_modules 放进 public/fonts/（看板只能加载本地字体）
+  for (const { name, path } of boardFontFiles()) files[`local-board/public/fonts/${name}`] = [readFileSync(path), { os: 3, attrs: (0o100644 << 16) >>> 0 }];
   // AGPL 要求分发时附带许可证全文
   for (const name of ['LICENSE', 'NOTICE']) files[`local-board/${name}`] = [readFileSync(join(root, name)), { os: 3, attrs: (0o100644 << 16) >>> 0 }];
   return zipSync(files, { level: 9 });

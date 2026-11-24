@@ -84,8 +84,8 @@ function playFlip() {
     // 被换列的那张：拿起、飞过去、放下
     node.classList.add('flying');
     node.animate([
-      { transform: `${from} rotate(0deg)` },
-      { offset: 0.4, transform: `translate(${dx * 0.45}px, ${dy * 0.45 - 14}px) rotate(-1.5deg) scale(1.03)`, boxShadow: '0 18px 36px -14px rgba(28, 36, 34, 0.38)' },
+      { transform: from },
+      { offset: 0.4, transform: `translate(${dx * 0.45}px, ${dy * 0.45 - 14}px) scale(1.02)`, boxShadow: '0 18px 36px -14px rgba(43, 39, 35, 0.32)' },
       { transform: 'none' },
     ], { duration: 620, easing: EASE }).finished.catch(() => {}).then(() => node.classList.remove('flying'));
   }
@@ -158,6 +158,11 @@ function confirmDialog(title, lines, confirmText = '确定') {
 }
 
 // —— 看板视图 ——
+// 给自己看的缓和小字；导出给别人看的 PDF 仍用标准状态名
+const COLUMN_NOTES = {
+  offer: '恭喜，这一程走完了',
+  closed: '这一次没有走到最后。经历都算数，下一次会更熟练。',
+};
 function statusSelect(card) {
   return el('select', { 'aria-label': `${card.job.company} 的状态`, onChange: (event) => { armFlip(card.id); updateCard(card.id, (current) => setStatus(current, event.target.value, localToday())); } },
     STATUSES.map((status) => el('option', { value: status.id, text: status.label, selected: status.id === card.status })));
@@ -195,8 +200,8 @@ function renderBoard() {
   const now = localNow();
   if (!state.board.cards.length) {
     main.append(el('section', { className: 'empty' }, [
-      el('h2', { text: '还没有岗位' }),
-      el('p', { text: '在秋招信库网站上收藏岗位，然后在“我的收藏”里点击“同步到本地看板”；也可以点上方“新增岗位”手动添加不在秋招信库里的岗位。' }),
+      el('h2', { text: '这里还空着' }),
+      el('p', { text: '在秋招信库网站上收藏岗位，再到“我的收藏”里点“同步到本地看板”；不在秋招信库里的岗位，可以点上方“新增岗位”自己记一张。' }),
     ]));
     return;
   }
@@ -207,6 +212,7 @@ function renderBoard() {
     const selectAll = el('button', { type: 'button', className: 'link', text: '全选本列', disabled: !cards.length, onClick: () => setSelected(cards.map((card) => card.id), true) });
     const section = el('section', { className: 'column', dataset: { column: column.id } }, [
       el('h2', {}, [el('span', { text: column.label }), el('span', { className: 'column-tools' }, [selectAll, el('span', { className: 'count', text: String(cards.length) })])]),
+      COLUMN_NOTES[column.id] && el('p', { className: 'column-note', text: COLUMN_NOTES[column.id] }),
       column.id === 'closed' && el('p', { className: 'column-hint', text: '拖到这里记为“未通过”，可在下拉框改为“已放弃”' }),
       list,
     ]);
@@ -223,7 +229,7 @@ function renderBoard() {
     });
     columns.append(section);
   }
-  main.append(el('p', { className: 'hint', text: '拖动卡片换列，或用卡片上的下拉框修改状态；截止日期 3 天内、下一步事项 24 小时内的卡片会高亮。勾选卡片后可以导出 PDF 分享投递进度。' }), columns);
+  main.append(el('p', { className: 'hint', text: '拖动卡片换列，或用卡片上的下拉框改状态；截止日期 3 天内、下一步事项 24 小时内的卡片会稍微突出一点。勾选卡片可以导出 PDF，分享投递进度。' }), columns);
 }
 
 // —— 统计视图 ——
@@ -428,7 +434,7 @@ function openCard(id) {
     if (status.value !== card.status) next = setStatus(next, status.value, localToday());
     if (jobInputs) {
       const job = sanitizeJob({ ...draft.job, company: jobInputs.company.value, title: jobInputs.title.value, cities: jobInputs.cities.value.split(/[，,、\s]+/).filter(Boolean), deadline: jobInputs.deadline.value, applyUrl: jobInputs.applyUrl.value });
-      if (!job) { showMessage('公司和岗位名称不能为空。', true); return; }
+      if (!job) { showMessage('公司和岗位名称都需要填写。', true); return; }
       next.job = job;
     }
     dialog.close();
@@ -443,7 +449,7 @@ function openCard(id) {
 
   dialog.replaceChildren(el('form', { method: 'dialog', className: 'dialog-body', onSubmit: (event) => { event.preventDefault(); save(); } }, [
     el('header', {}, [el('div', {}, [el('p', { className: 'card-company', text: card.job.company }), el('h2', { text: card.job.title })]), el('button', { type: 'button', className: 'icon', text: '关闭', onClick: () => dialog.close() })]),
-    card.removed && el('p', { className: 'message warn', text: '秋招信库上已经没有这个岗位（可能已截止或下架），卡片保留供你记录。' }),
+    card.removed && el('p', { className: 'message warn', text: '这个岗位已经从秋招信库撤下了（可能截止了），你的记录还留着。' }),
     links.length > 0 && el('p', { className: 'links' }, links),
     jobInputs && el('div', { className: 'grid' }, [field('公司', jobInputs.company), field('岗位', jobInputs.title), field('城市', jobInputs.cities, '用逗号分隔'), field('截止日期', jobInputs.deadline), field('网申地址', jobInputs.applyUrl)]),
     field('状态', status),
@@ -467,7 +473,7 @@ function openNewCard() {
   };
   const create = async () => {
     const card = createManualCard({ company: inputs.company.value, title: inputs.title.value, cities: inputs.cities.value.split(/[，,、\s]+/).filter(Boolean), cohort: inputs.cohort.value, deadline: inputs.deadline.value, applyUrl: inputs.applyUrl.value }, localToday(), crypto.randomUUID().slice(0, 12));
-    if (!card) { showMessage('公司和岗位名称不能为空。', true); return; }
+    if (!card) { showMessage('公司和岗位名称都需要填写。', true); return; }
     dialog.close();
     armFlip();
     await saveBoard({ ...state.board, cards: [card, ...state.board.cards] }).catch((error) => showMessage(error.message, true));
@@ -489,19 +495,19 @@ async function importFromHash() {
   history.replaceState(null, '', location.pathname + location.search);
   try {
     const jobs = (await decodeSync(value)).map(sanitizeJob).filter(Boolean);
-    if (!jobs.length) { showMessage('同步数据里没有可导入的岗位。', true); return; }
+    if (!jobs.length) { showMessage('这次同步过来的数据里没有能导入的岗位。', true); return; }
     const { added, existing } = previewImport(state.board, jobs);
     const ok = await confirmDialog(`从秋招信库同步 ${jobs.length} 个收藏岗位`, [
       `将新增 ${added} 条，放进“想投”。`,
       `已存在 ${existing} 条，只更新岗位信息（截止日期、链接等），不改动状态、时间线、备注和标签。`,
       '同步是单向的：之后在网站上取消收藏，不会删除这里的卡片。',
     ], '确认导入');
-    if (!ok) { showMessage('已取消导入。'); return; }
+    if (!ok) { showMessage('这次先不导入，什么都没改。'); return; }
     const result = mergeImport(state.board, jobs, localToday());
     await saveBoard(result.board);
-    showMessage(`导入完成：新增 ${result.added} 条，更新 ${result.updated} 条。在网站上取消收藏不会删除这里的卡片。`);
+    showMessage(`导入好了：新放进来 ${result.added} 张，更新了 ${result.updated} 张。在网站上取消收藏，不会删掉这里的卡片。`);
   } catch (error) {
-    showMessage(`同步失败：${error.message}`, true);
+    showMessage(`这次没同步成功（${error.message}）。可以回到网站再点一次“同步到本地看板”。`, true);
   }
 }
 
@@ -527,14 +533,14 @@ document.getElementById('export-pdf').addEventListener('click', exportPdf);
 document.getElementById('clear-selection').addEventListener('click', () => { state.selected.clear(); syncSelection(); });
 document.getElementById('refresh').addEventListener('click', async (event) => {
   event.target.disabled = true;
-  showMessage('正在从秋招信库读取最新岗位信息…');
+  showMessage('正在去秋招信库看看有没有新消息');
   try {
     const result = await api('/api/refresh', { method: 'POST', body: '{}' });
     state.board = result.board;
     render();
-    showMessage(`已更新 ${result.updated} 张卡片的岗位信息${result.removed ? `，${result.removed} 个岗位在网站上已下架（卡片保留）` : ''}。`);
+    showMessage(`看过了：${result.updated} 张卡片的岗位信息有更新${result.removed ? `，${result.removed} 个岗位已经从网站上撤下，卡片还留着` : ''}。`);
   } catch (error) {
-    showMessage(`刷新失败：${error.message}`, true);
+    showMessage(`这次没连上秋招信库（${error.message}），稍后再试试。`, true);
   } finally {
     event.target.disabled = false;
   }
@@ -550,13 +556,13 @@ document.getElementById('import-file').addEventListener('change', async (event) 
     if (!Array.isArray(data?.cards)) throw new Error('这不是本地看板导出的 JSON 文件');
     if (!(await confirmDialog('用这个文件替换当前看板？', [`文件里有 ${data.cards.length} 张卡片，当前看板有 ${state.board.cards.length} 张。`, '当前内容会先自动备份到 data/backups 文件夹。'], '替换'))) return;
     await saveBoard(data);
-    showMessage(`已导入 ${state.board.cards.length} 张卡片。`);
+    showMessage(`导入好了，现在看板上有 ${state.board.cards.length} 张卡片。`);
   } catch (error) {
-    showMessage(`导入失败：${error.message}`, true);
+    showMessage(`这个文件没导入成功（${error.message}）。`, true);
   }
 });
 document.getElementById('export-ics').addEventListener('click', () => {
-  if (!scheduleItems(state.board.cards).length) { showMessage('还没有截止日期或下一步事项，日历是空的。', true); return; }
+  if (!scheduleItems(state.board.cards).length) { showMessage('还没有截止日期或下一步事项，日历先空着。可以在卡片详情里写下下一步。', true); return; }
   download(`秋招投递日程-${localToday()}.ics`, buildIcs(state.board.cards, new Date().toISOString()), 'text/calendar');
 });
 const manualUpdateText = (result) => `有新版本 v${result.latest}（当前 v${result.current}）。请到秋招信库下载新版压缩包：${result.downloadUrl}。升级时保留旧文件夹里的 data 文件夹，复制到新文件夹即可。`;
@@ -579,15 +585,15 @@ async function waitForRestart(target, from, startedAt) {
 
 document.getElementById('check-update').addEventListener('click', async (event) => {
   const button = event.currentTarget;
-  showMessage('正在检查更新…');
+  showMessage('正在看看有没有新版本');
   let result;
   try {
     result = await api('/api/check-update');
   } catch (error) {
-    showMessage(`检查更新失败：${error.message}`, true);
+    showMessage(`这次没连上秋招信库，暂时查不了更新（${error.message}）。`, true);
     return;
   }
-  if (!result.hasUpdate) { showMessage(`已是最新版本 v${result.current}。`); return; }
+  if (!result.hasUpdate) { showMessage(`已经是最新的 v${result.current} 了。`); return; }
   if (!result.canUpdate) { showMessage(manualUpdateText(result)); return; }
   showMessage(`有新版本 v${result.latest}（当前 v${result.current}）。`);
   const ok = await confirmDialog(`更新到 v${result.latest}？`, [
@@ -598,14 +604,14 @@ document.getElementById('check-update').addEventListener('click', async (event) 
   ], '立即更新');
   if (!ok) { showMessage(manualUpdateText(result)); return; }
   button.disabled = true;
-  showMessage('正在下载并安装更新…');
+  showMessage('正在下载新版本，装好后会自动重启');
   try {
     const { startedAt } = await api('/api/info');
     const done = await api('/api/update', { method: 'POST', body: '{}' });
-    showMessage(`已安装 v${done.to}，正在重启看板…`);
+    showMessage(`v${done.to} 装好了，看板正在重启`);
     await waitForRestart(done.to, done.from, startedAt);
   } catch (error) {
-    showMessage(`更新失败：${error.message}。当前版本没有改动。`, true);
+    showMessage(`这次没更新成功（${error.message}），现在的版本原样没动。`, true);
   } finally {
     button.disabled = false;
   }
@@ -617,7 +623,7 @@ document.getElementById('check-update').addEventListener('click', async (event) 
     [state.board, state.info] = await Promise.all([api('/api/board'), api('/api/info')]);
     document.getElementById('version-line').textContent = `本地看板 v${state.info.version} · 数据文件 data/board.json · 端口 ${state.info.port}`;
   } catch (error) {
-    showMessage(`无法连接本地服务：${error.message}。请确认启动窗口没有关闭。`, true);
+    showMessage(`连不上本地服务（${error.message}）。看一眼启动看板的那个命令行窗口是不是被关掉了。`, true);
   }
   render();
   await importFromHash();

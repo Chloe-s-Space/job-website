@@ -1,51 +1,66 @@
-// 生成标题字体子集：只包含标题、站名等固定文字用到的字，供主站（public/fonts）和本地看板（local-board/public/fonts）使用。
-// 字体来自 @fontsource/noto-serif-sc 的 900 字重（按 unicode-range 切成约 100 块），先找出用到的块，再用 fontTools 裁到只剩用到的字。
-// 需要 Python 和 fontTools（pip install fonttools brotli）。改了标题文字后运行：node scripts/build-fonts.mjs，并提交生成的文件。
-import { execFileSync } from 'node:child_process';
-import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+// 生成标题字体（思源宋体 Noto Serif SC 700）的样式表。只有大标题用衬线粗体，其余文字用系统无衬线黑体，所以只需要这一个字重。
+// 改了本地看板的固定标题（BOARD_HEAD_TEXT）后运行：npm run build:fonts，并提交生成的文件。
+//
+// - 主站：src/fonts.css 直接引用 node_modules 里 @fontsource/noto-serif-sc 的 700 分片（按 unicode-range 切开，约 100 个），由 Vite 打包；
+//   浏览器只下载标题里实际出现的字所在的分片，只写 woff2，不写 woff 后备。
+// - 本地看板：内容安全策略只允许本地资源。local-board/public/fonts.css 只声明覆盖看板固定标题的那几个分片，
+//   分片文件在打包下载包时从 node_modules 复制（scripts/build-local-board.mjs），不进仓库。
+// 字体许可为 SIL OFL 1.1，许可证全文随文件放置。
+import { copyFileSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
-const pkg = join(root, 'node_modules', '@fontsource', 'noto-serif-sc');
+const NOTO = join(root, 'node_modules', '@fontsource', 'noto-serif-sc');
 
-// 用标题字体显示的全部固定文字。动态内容（岗位名、用户改过的标题）不用这款字体
-const SITE_TEXT = [
-  '秋招信库', '找到适合你的下一站', '全部岗位', '即将截止', '我的收藏', '岗位数据暂时无法加载', '还没有收藏的岗位', '没有找到匹配的岗位',
-  '求职画像', '本地投递看板', '简历生成器', '模板与排版', '基本信息',
-  '数据洞察', '今年秋招的岗位，都在哪里', '岗位最多的城市', '省份分布', '行业分布', '岗位族分布', '未来 8 周的截止日期', '届别分布', '记录最多的公司',
-];
-const BOARD_TEXT = [
-  '秋', '本地投递看板', '还没有岗位', '想投', '已投递', '测评/笔试', '面试中', 'Offer', '已结束', '投递漏斗', '每周投递数量', '日程', '投递进度',
-];
+// 本地看板里用衬线粗体显示的固定标题
+export const BOARD_HEAD_TEXT = ['本地投递看板', '这里还空着', '投递漏斗', '每周投递数量', '日程', '投递进度', '新增岗位', '导出', '删除这张卡片', '更新到', '从秋招信库同步个收藏岗位', '用这个文件替换当前看板', '0123456789.v？'];
 
-const chunks = [...readFileSync(join(pkg, '900.css'), 'utf8').matchAll(/url\(\.\/files\/([^)]+\.woff2)\)[^;]*;\s*unicode-range:\s*([^;]+);/g)]
-  .map(([, file, ranges]) => ({ file, ranges: ranges.split(',').map((range) => range.trim().replace(/^U\+/i, '').split('-').map((hex) => parseInt(hex, 16))) }));
-const chunkOf = (code) => chunks.find((chunk) => chunk.ranges.some(([from, to = from]) => code >= from && code <= to));
-
-function build(texts, outDir, cssPath, urlPrefix) {
-  const chars = [...new Set([...texts.join('')])].filter((char) => char.trim());
-  const groups = new Map();
-  for (const char of chars) {
-    const chunk = chunkOf(char.codePointAt(0));
-    if (!chunk) throw new Error(`字体里没有“${char}”`);
-    if (!groups.has(chunk.file)) groups.set(chunk.file, []);
-    groups.get(chunk.file).push(char);
-  }
-  rmSync(outDir, { recursive: true, force: true });
-  mkdirSync(outDir, { recursive: true });
-  const faces = [];
-  [...groups.entries()].forEach(([file, list], index) => {
-    const name = `head-${index + 1}.woff2`;
-    const unicodes = list.map((char) => `U+${char.codePointAt(0).toString(16)}`).join(',');
-    execFileSync('python', ['-m', 'fontTools.subset', join(pkg, 'files', file), `--unicodes=${unicodes}`, '--flavor=woff2', '--layout-features=*', `--output-file=${join(outDir, name)}`]);
-    faces.push(`@font-face { font-family: "Qiuzhao Head"; font-style: normal; font-weight: 900; font-display: swap; src: url("${urlPrefix}${name}") format("woff2"); unicode-range: ${unicodes}; }`);
-  });
-  // SIL OFL 要求字体随附许可证全文
-  writeFileSync(join(outDir, 'OFL.txt'), readFileSync(join(pkg, 'LICENSE')));
-  writeFileSync(cssPath, `/* 标题字体子集（思源宋体 Noto Serif SC 900，SIL OFL 1.1）。由 scripts/build-fonts.mjs 生成，不要手改 */\n${faces.join('\n')}\n`);
-  console.log(`${cssPath}：${chars.length} 个字，${faces.length} 个文件`);
+/** 解析 fontsource 样式表：[{ file, ranges: [[from, to]], rangeText }] */
+function parseFaces(cssPath) {
+  const css = readFileSync(cssPath, 'utf8');
+  return [...css.matchAll(/@font-face\s*{([^}]*)}/g)].map(([, body]) => {
+    const file = body.match(/url\(\.\/files\/([^)]+\.woff2)\)/)?.[1];
+    const rangeText = body.match(/unicode-range:\s*([^;]+)/)?.[1].trim();
+    if (!file || !rangeText) return null;
+    const ranges = rangeText.split(',').map((range) => range.trim().replace(/^U\+/i, '').split('-').map((hex) => parseInt(hex, 16)));
+    return { file, ranges, rangeText };
+  }).filter(Boolean);
 }
 
-build(SITE_TEXT, join(root, 'public', 'fonts'), join(root, 'src', 'fonts.css'), '/fonts/');
-build(BOARD_TEXT, join(root, 'local-board', 'public', 'fonts'), join(root, 'local-board', 'public', 'fonts.css'), 'fonts/');
+const headFaces = () => parseFaces(join(NOTO, '700.css'));
+
+/** 覆盖看板固定标题的分片 */
+function boardFaces() {
+  const codes = [...new Set([...BOARD_HEAD_TEXT.join('')])].filter((char) => char.trim()).map((char) => char.codePointAt(0));
+  return headFaces().filter((face) => codes.some((code) => face.ranges.some(([from, to = from]) => code >= from && code <= to)));
+}
+
+const face = (url, rangeText) => `@font-face { font-family: "Noto Serif SC"; font-style: normal; font-weight: 700; font-display: swap; src: url("${url}") format("woff2"); unicode-range: ${rangeText}; }`;
+
+/** 本地看板打包时用：需要随下载包分发的分片在 node_modules 里的位置 */
+export function boardFontFiles() {
+  return boardFaces().map(({ file }) => ({ name: file, path: join(NOTO, 'files', file) }));
+}
+
+/** 开发时把同样的文件复制到 local-board/public/fonts/，直接运行看板源码也能看到字体（这些文件不进仓库） */
+export function copyBoardFonts(dir) {
+  mkdirSync(dir, { recursive: true });
+  for (const { name, path } of boardFontFiles()) copyFileSync(path, join(dir, name));
+}
+
+if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
+  const header = '/* 由 scripts/build-fonts.mjs 生成，不要手改。思源宋体 Noto Serif SC 700，只用于大标题；SIL OFL 1.1 */';
+  writeFileSync(join(root, 'src', 'fonts.css'), `${[header, ...headFaces().map(({ file, rangeText }) => face(`../node_modules/@fontsource/noto-serif-sc/files/${file}`, rangeText))].join('\n')}\n`);
+
+  const boardDir = join(root, 'local-board', 'public', 'fonts');
+  rmSync(boardDir, { recursive: true, force: true });
+  mkdirSync(boardDir, { recursive: true });
+  copyFileSync(join(NOTO, 'LICENSE'), join(boardDir, 'OFL-NotoSerifSC.txt'));
+  writeFileSync(join(root, 'local-board', 'public', 'fonts.css'), `${[header, ...boardFaces().map(({ file, rangeText }) => face(`fonts/${file}`, rangeText))].join('\n')}\n`);
+  copyBoardFonts(boardDir);
+
+  // 主站不再需要自托管的文楷子集
+  rmSync(join(root, 'public', 'fonts'), { recursive: true, force: true });
+  console.log(`字体：主站 ${headFaces().length} 个分片按需加载；本地看板打包 ${boardFaces().length} 个分片`);
+}

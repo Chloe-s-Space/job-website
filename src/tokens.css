@@ -1,55 +1,65 @@
-/* 秋招信库的设计令牌：校园公告栏。主站、简历生成器、数据洞察和本地看板共用同一套数值（看板在 local-board/public/styles.css 里有一份同步的拷贝）。只有浅色。 */
-@import url('./fonts.css');
+/* 秋招信库的设计令牌：手账风的“秋招列车”。主站、简历生成器、数据洞察共用；
+   本地看板在 local-board/public/styles.css 顶部有一份同步拷贝，改值时两处一起改。只有浅色。 */
+
+/* 大标题用思源宋体粗体（自托管，按 unicode-range 分片，浏览器只下载标题里出现的字）；其余文字用系统无衬线黑体 */
+@import './fonts.css';
 
 :root {
   color-scheme: light;
 
-  /* 中性色：一条 9 阶灰绿色阶，公告栏橱窗的底色在第 100 阶 */
-  --paper: #fffefb;
-  --g-50: #f4f6f3;
-  --g-100: #e8ede9;
-  --g-150: #dfe6e1;
-  --g-200: #d3dcd6;
-  --g-300: #b7c3bc;
-  --g-400: #8e9c95;
-  --g-500: #5f6e67;
-  --g-600: #48554f;
-  --g-700: #323d38;
-  --ink: #1c2422;
+  /* 纸：暖米白底（插画请用同一底色 #f4efe6），换气带、卡片、便签 */
+  --paper: #f4efe6;
+  --paper-deep: #ebe3d4;
+  --card: #fdfaf3;
+  --sticky: #fbf0c4;
 
-  /* 主色：网站原来的青绿。用在双线、站标和主要操作 */
-  --accent: #195766;
-  --accent-deep: #134653;
-  --accent-tint: #e8f2f4;
-  --danger: #b0463c;
-  --danger-tint: #fbeceb;
-  --accent-line: #9ac3cb;
+  /* 墨：三档都在米色底上对比度 ≥ 6.7，阅读不发虚 */
+  --ink: #221e1a;
+  --ink-soft: #3f3832;
+  --ink-faint: #5a5148;
 
-  /* 黄色告示纸：3 天内截止 */
-  --yellow-paper: #fdf5d3;
-  --yellow-edge: #ead27c;
-  --amber: #8a5a00;
-  --amber-tint: #fbefcf;
+  /* 线 */
+  --rule: #d8cdbb;
+  --rule-strong: #b9aa94;
 
-  /* 状态 */
-  --blue: #4a6fa5;
-  --blue-tint: #e3eef4;
-  --green: #2b7a4b;
-  --green-tint: #e2f1e7;
+  /* 灰褐中性色 */
+  --taupe-50: #f0e9dd;
+  --taupe-100: #e5dbcb;
+  --taupe-300: #bdad95;
+  --taupe-500: #87765f;
 
-  /* 字体：标题用思源宋体的粗字重（只打包标题用到的字），其余用系统无衬线 */
-  --font-sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
-  --font-head: "Qiuzhao Head", "Songti SC", "STSong", serif;
+  /* 铁锈橙：主要操作、选中、邮戳。文字和按钮底用 rust-deep（白字对比度 5.4） */
+  --rust: #d96b27;
+  --rust-deep: #a84a14;
+  --rust-press: #8c3c0f;
+  --rust-tint: #fbe3d3;
+  /* 琥珀黄：荧光笔、截止便签 */
+  --amber: #f4c95d;
+  --amber-text: #7a5400;
+  --amber-tint: #fcefc7;
+  /* 鼠尾草绿：城市徽章、拿到 Offer */
+  --sage: #5b7a5e;
+  --sage-text: #3f5c44;
+  --sage-tint: #e3ebdf;
+  --sage-line: #b7c7b4;
+  /* 只用于危险操作 */
+  --brick: #a3332a;
+  --brick-tint: #f6e0dc;
+  --selection: #f7dd9a;
 
-  /* 字号：1.2 比例的固定 rem 阶梯 */
-  --t-xs: 0.75rem;
-  --t-sm: 0.8125rem;
-  --t-md: 0.875rem;
-  --t-base: 0.9375rem;
-  --t-lg: 1.0625rem;
-  --t-xl: 1.3125rem;
-  --t-2xl: 1.75rem;
-  --t-3xl: 2.25rem;
+  /* 字体：只有大标题用衬线粗体，其余全部用清晰的无衬线黑体 */
+  --font-head: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --font-ui: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Hiragino Sans GB", sans-serif;
+
+  /* 字号：比上一版整体大 1–2px */
+  --t-xs: 0.8125rem;
+  --t-sm: 0.875rem;
+  --t-md: 0.9375rem;
+  --t-base: 1rem;
+  --t-lg: 1.125rem;
+  --t-xl: 1.375rem;
+  --t-2xl: 1.875rem;
+  --t-3xl: 2.75rem;
 
   /* 间距：4px 基线 */
   --s-1: 4px;
@@ -61,49 +71,76 @@
   --s-8: 32px;
   --s-10: 40px;
   --s-12: 48px;
+  --s-16: 64px;
 
-  /* 圆角：控件 6、纸张 10、面板 14 */
-  --r-sm: 6px;
-  --r-md: 10px;
-  --r-lg: 14px;
-  --r-pill: 999px;
+  /* 圆角：大块容器 22–24px 的连续曲率圆角，按钮、搜索框、标签一律胶囊形 */
+  --r-control: 14px;
+  --r-card: 22px;
+  --r-panel: 24px;
+  --r-pill: 9999px;
 
-  /* 阴影：纸贴在玻璃后面的轻微落影；拿起来时加深 */
-  --shadow-paper: 0 1px 0 rgb(28 36 34 / 0.05), 0 2px 6px -2px rgb(28 36 34 / 0.12);
-  --shadow-lift: 0 2px 4px rgb(28 36 34 / 0.06), 0 14px 28px -14px rgb(28 36 34 / 0.38);
-  --shadow-pop: 0 4px 10px rgb(28 36 34 / 0.08), 0 24px 48px -20px rgb(28 36 34 / 0.4);
+  /* 边：极细、极淡的暖调半透明线，代替深色边框 */
+  --edge: rgb(135 118 95 / 0.16);
+  --edge-strong: rgb(135 118 95 / 0.3);
+
+  /* 投影：纸张叠放的轻影 */
+  /* 投影：多层、柔和、模糊，像一页页柔软的纸叠在一起 */
+  --shadow-card: 0 8px 30px rgb(0 0 0 / 0.03), 0 2px 8px rgb(60 40 20 / 0.04), 0 0 1px rgb(60 40 20 / 0.08);
+  --shadow-lift: 0 14px 40px rgb(0 0 0 / 0.06), 0 4px 12px rgb(60 40 20 / 0.06), 0 0 1px rgb(60 40 20 / 0.1);
+  --shadow-float: 0 24px 60px rgb(0 0 0 / 0.1), 0 6px 18px rgb(60 40 20 / 0.08);
+
+  /* 暖调液态玻璃：极淡的暖白半透明层 + 模糊提饱和，左上一道白色高光、右下一抹暖棕折射，外面一圈大范围的淡投影 */
+  --glass-bg: rgb(255 252 245 / 0.35);
+  --glass-bg-strong: rgb(255 252 245 / 0.62);
+  --glass-blur: blur(20px) saturate(180%);
+  --glass-edge: inset 0 1.5px 1px rgb(255 255 255 / 0.85), inset 1px 0 1px rgb(255 255 255 / 0.5), inset 0 -1px 2px rgb(120 100 80 / 0.12), inset -1px 0 2px rgb(120 100 80 / 0.08);
+  --glass-shadow: 0 12px 32px rgb(70 55 40 / 0.08);
+  --glass-sheen: linear-gradient(115deg, rgb(255 255 255 / 0) 35%, rgb(255 255 255 / 0.55) 50%, rgb(255 255 255 / 0) 65%);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
   /* 动效 */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --d-fast: 140ms;
-  --d-base: 200ms;
-  --d-slow: 320ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --d-fast: 180ms;
+  --d-base: 260ms;
+  --d-slow: 420ms;
 
-  /* 统一的栏宽：筛选栏与看板列一样宽 */
-  /* 卡片顶端双线的颜色：平时是中性的印刷线，已收藏时换成主色 */
-  --rule: var(--g-300);
+  --page: 1240px;
   --rail: 272px;
-  --page: 1320px;
+
+  /* 纸张颗粒：一层很淡的噪点，叠在底色上，不改变底色 */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.27 0 0 0 0 0.18 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
 }
 
-/* 双线：上粗下细，用在页头底部和每张通知的顶端 */
-.head-rule {
-  height: 5px;
-  background:
-    linear-gradient(var(--accent), var(--accent)) top / 100% 2px no-repeat,
-    linear-gradient(var(--accent), var(--accent)) bottom / 100% 1px no-repeat;
+html { background: var(--paper); }
+body {
+  background-color: var(--paper);
+  background-image: var(--grain);
+  font-family: var(--font-ui);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
 }
 
-::selection { background: #cfe3e7; color: var(--ink); }
+/* 数字：等宽对齐 */
+.num { font-variant-numeric: tabular-nums; }
+/* 缓和的“人话”：同样是黑体，颜色稍浅一档 */
+.note { color: var(--ink-soft); }
 
-/* 页面之间的渐入渐出：浏览器原生的跨文档视图过渡（Chrome/Edge 126+、Safari 18.2+）。
-   不支持的浏览器照常直接切换。旧页稍微下沉淡出，新页从下方浮起 */
+/* 页头下方的一条细线 */
+.head-rule { height: 1px; background: var(--rule-strong); }
+
+/* 浏览器自带的部分也要穿上这套颜色 */
+::selection { background: var(--selection); color: var(--ink); }
+html { scrollbar-color: var(--taupe-300) var(--paper-deep); caret-color: var(--rust-deep); }
+:focus-visible { outline: 2px solid var(--rust-deep); outline-offset: 2px; }
+a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+
+/* 页面之间：浏览器原生的跨文档视图过渡。不支持的浏览器照常直接切换 */
 @view-transition { navigation: auto; }
-::view-transition-old(root) { animation: page-out 180ms cubic-bezier(0.4, 0, 1, 1) both; }
-::view-transition-new(root) { animation: page-in 320ms var(--ease-out) 60ms both; }
-@keyframes page-out { to { opacity: 0; transform: translateY(6px); } }
-@keyframes page-in { from { opacity: 0; transform: translateY(10px); } }
+::view-transition-old(root) { animation: page-out 200ms var(--ease-in) both; }
+::view-transition-new(root) { animation: page-in 340ms var(--ease-out) 60ms both; }
+@keyframes page-out { to { opacity: 0; transform: translateY(4px); } }
+@keyframes page-in { from { opacity: 0; transform: translateY(8px); } }
 @media (prefers-reduced-motion: reduce) {
   @view-transition { navigation: none; }
 }

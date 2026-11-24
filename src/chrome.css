@@ -1,0 +1,67 @@
+/* 三个页面共用的外壳：基础重置、按钮与链接、顶栏。令牌见 tokens.css */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; min-width: 320px; color: var(--ink); font: 400 var(--t-base)/1.65 var(--font-ui); }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; }
+a { color: inherit; }
+h1, h2, h3, p { margin: 0; font-weight: 400; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+:focus-visible { border-radius: var(--r-control); }
+input::placeholder { color: var(--ink-faint); }
+
+/* —— 按钮与链接：全站同一套。胶囊形；悬停时轻轻回弹放大，表面扫过一道斜向光泽 —— */
+.button-primary, .button-secondary {
+  position: relative; overflow: hidden; isolation: isolate;
+  display: inline-flex; align-items: center; justify-content: center; gap: 5px; height: 42px; padding: 0 var(--s-5);
+  border: 1px solid transparent; border-radius: var(--r-pill); font-size: var(--t-md); text-decoration: none; white-space: nowrap;
+  transition: background var(--d-fast) var(--ease-out), border-color var(--d-fast) var(--ease-out), color var(--d-fast), box-shadow var(--d-base) var(--ease-out), transform 420ms var(--ease-spring);
+}
+.button-primary { background: var(--rust-deep); border-color: var(--rust-deep); color: #fff; font-weight: 700; box-shadow: inset 0 1.5px 1px rgb(255 255 255 / 0.28), inset 0 -1px 2px rgb(60 20 0 / 0.25), 0 6px 16px rgb(168 74 20 / 0.22); }
+.button-primary:hover { background: var(--rust-press); border-color: var(--rust-press); }
+.button-secondary { background: var(--glass-bg); border-color: transparent; color: var(--ink); box-shadow: var(--glass-edge), var(--glass-shadow); -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur); }
+.button-secondary:hover:not(:disabled) { background: var(--glass-bg-strong); }
+.button-primary:hover, .button-secondary:hover:not(:disabled) { transform: scale(1.015); }
+.button-primary:active, .button-secondary:active:not(:disabled) { transform: scale(0.985); transition-duration: 120ms; }
+/* 光泽：一道斜向的高光从左往右扫过 */
+.button-primary::after, .button-secondary::after { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--glass-sheen) 160% 0 / 250% 100% no-repeat; transition: background-position 0s; pointer-events: none; }
+.button-primary:hover::after, .button-secondary:hover:not(:disabled)::after { background-position: -60% 0; transition: background-position 700ms var(--ease-out); }
+.button-primary svg { transition: transform var(--d-base) var(--ease-out); }
+.button-primary:hover svg { transform: translate(2px, -2px); }
+/* 文字链接：下划线从左往右画出来 */
+.text-link {
+  color: var(--ink-soft); font-size: var(--t-md); text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) left bottom / 0 1px no-repeat;
+  transition: background-size var(--d-base) var(--ease-out), color var(--d-fast);
+}
+.text-link:hover { color: var(--ink); background-size: 100% 1px; }
+
+/* —— 顶栏：一条浮在纸面上的暖调液态玻璃，滚动时下面的文字和暖色隐约透出来 —— */
+.topbar { position: sticky; top: 0; z-index: 30; background: var(--glass-bg); -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur); box-shadow: inset 0 1.5px 1px rgb(255 255 255 / 0.85), inset 0 -1px 2px rgb(120 100 80 / 0.12), var(--glass-shadow); }
+.topbar-inner { max-width: var(--page); margin: 0 auto; padding: 0 var(--s-6); height: 64px; display: flex; align-items: center; gap: var(--s-4); }
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+/* 站标：一枚圆润的铁锈橙小印 */
+.brand-seal { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 11px; background: var(--rust-deep); color: #fff; box-shadow: inset 0 1.5px 1px rgb(255 255 255 / 0.3), 0 4px 10px rgb(168 74 20 / 0.25); font-family: var(--font-head); font-size: 18px; font-weight: 700; line-height: 1; }
+.brand-name { font-family: var(--font-head); font-size: var(--t-xl); font-weight: 700; line-height: 1; letter-spacing: 0.06em; color: var(--ink); }
+.edition { padding: 2px 10px; border-radius: var(--r-pill); background: var(--amber-tint); color: var(--amber-text); font-size: var(--t-xs); font-weight: 600; }
+.topbar-nav { margin-left: auto; display: flex; align-items: center; gap: 4px; }
+.topbar-nav a { display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 var(--s-4); border-radius: var(--r-pill); color: var(--ink-soft); font-size: var(--t-md); font-weight: 600; text-decoration: none; transition: background var(--d-fast), color var(--d-fast), box-shadow var(--d-base), transform 420ms var(--ease-spring); }
+.topbar-nav a:hover { background: var(--glass-bg-strong); color: var(--ink); box-shadow: var(--glass-edge); transform: scale(1.015); }
+.topbar-nav svg { color: var(--ink-faint); transition: color var(--d-fast); }
+.topbar-nav a:hover svg { color: var(--rust-deep); }
+
+
+/* 页面名：数据洞察页在站名后面 */
+.page-name { padding-left: var(--s-4); border-left: 1px solid var(--rule); color: var(--ink-soft); font-size: var(--t-lg); line-height: 1.6; letter-spacing: 0.04em; }
+
+@media (max-width: 680px) {
+  .topbar-inner { height: 54px; padding: 0 var(--s-4); gap: var(--s-2); }
+  .edition, .page-name { display: none; }
+  .topbar-nav a { width: 40px; padding: 0; justify-content: center; }
+  .topbar-nav a span:not(.sr-only) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .button-primary, .button-secondary, .button-primary svg, .text-link, .topbar-nav a { transition-property: background, border-color, color !important; transform: none !important; }
+  .button-primary::after, .button-secondary::after { display: none; }
+}

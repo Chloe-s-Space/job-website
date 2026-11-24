@@ -164,8 +164,8 @@ export default function ResumeApp() {
   const pages = Math.ceil((layout.height - 4) / PAGE_HEIGHT);
   const shrunk = layout.scale < style.scale - 0.001;
   const status = pages > 1
-    ? { warn: true, text: style.autoFit ? `已压到最小字号仍约 ${pages} 页，建议精简内容或调小边距` : `内容约 ${pages} 页，可开启“自动压缩到一页”` }
-    : { warn: false, text: shrunk ? `一页 · 已自动压缩至 ${Math.round(layout.scale * 100)}%` : '一页' };
+    ? { warn: true, text: style.autoFit ? `压到最小字号还是约 ${pages} 页，可以精简一点内容，或调小边距` : `内容大约 ${pages} 页，打开“自动压缩到一页”试试` }
+    : { warn: false, text: shrunk ? `正好一页 · 已自动缩到 ${Math.round(layout.scale * 100)}%` : '正好一页' };
 
   const exportJson = () => {
     const url = URL.createObjectURL(new Blob([JSON.stringify(resume, null, 2)], { type: 'application/json' }));
@@ -181,23 +181,23 @@ export default function ResumeApp() {
     if (!file) return;
     let next = null;
     try { next = normalizeResume(JSON.parse(await file.text())); } catch { /* 交给下面统一提示 */ }
-    if (next) setResume(next); else window.alert('无法识别这个文件，请选择本页导出的 JSON 数据。');
+    if (next) setResume(next); else window.alert('这个文件认不出来。请选择在这里“备份”导出的 JSON 文件。');
   };
   const importPdfFile = async (event) => {
     const file = event.target.files[0];
     event.target.value = '';
     if (!file) return;
-    setNotice({ text: '正在识别 PDF…' });
+    setNotice({ text: '正在读这份 PDF' });
     try {
       const { importPdf } = await import('./pdf-import.js');
       const result = await importPdf(file);
-      if (!result) { setNotice({ warn: true, text: '这份 PDF 里没有可提取的文字（可能是扫描件或图片），暂时无法识别。' }); return; }
-      if (!window.confirm('识别完成，用识别结果替换当前简历内容？')) { setNotice(null); return; }
+      if (!result) { setNotice({ warn: true, text: '这份 PDF 里读不到文字，可能是扫描件或图片，暂时没法自动识别。' }); return; }
+      if (!window.confirm('读完了。用识别出来的内容替换现在的简历吗？')) { setNotice(null); return; }
       setResume(normalizeResume({ ...result, style }));
       const { stats } = result;
-      setNotice({ text: `已识别基本信息 ${stats.basics} 项、模块 ${stats.sections} 个${stats.leftovers ? `，另有 ${stats.leftovers} 行未能归类，放在“其他内容”` : ''}。自动识别可能有误，请逐项核对后再导出。` });
+      setNotice({ text: `认出了基本信息 ${stats.basics} 项、模块 ${stats.sections} 个${stats.leftovers ? `，另有 ${stats.leftovers} 行没分好类，放在“其他内容”里` : ''}。自动识别不一定准，导出前逐项看一眼。` });
     } catch {
-      setNotice({ warn: true, text: '无法读取这个 PDF，文件可能已损坏或设有密码。' });
+      setNotice({ warn: true, text: '这份 PDF 打不开，可能已损坏或设了密码。' });
     }
   };
   const replaceAll = (next, message) => { if (window.confirm(message)) setResume(next); };
@@ -227,7 +227,8 @@ export default function ResumeApp() {
     </nav>
     <div className="rz-main">
       <aside className="rz-editor" ref={editorRef}>
-        <a className="rz-recommend" href={`${import.meta.env.BASE_URL}?sort=recommend&from=resume`}><Sparkles size={16} /><span><strong>用这份简历看推荐岗位</strong><small>只读取求职方向、城市和届别，在浏览器本地排序</small></span><ArrowRight size={16} /></a>
+        <div className="rz-opener"><h1>把你走过的路写下来</h1><p className="note">左边写，右边马上能看到排好的样子。</p></div>
+        <a className="rz-recommend" href={`${import.meta.env.BASE_URL}?sort=recommend&from=resume`}><Sparkles size={16} /><span><strong>用这份简历看看适合的岗位</strong><small>只读方向、城市和届别，在这个浏览器里排序</small></span><ArrowRight size={16} /></a>
         {notice && <div className={notice.warn ? 'rz-notice warn' : 'rz-notice'} role="status"><span>{notice.text}</span><button type="button" onClick={() => setNotice(null)} aria-label="关闭提示"><X size={14} /></button></div>}
         <section className="rz-card">
           <h2>模板与排版</h2>
