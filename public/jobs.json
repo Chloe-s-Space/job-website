@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-23T10:49:40.295Z",
+  "generatedAt": "2026-11-24T01:41:59.055Z",
   "mode": "live",
   "jobs": [
     {
@@ -2837,35 +2837,6 @@
       "announcementUrl": "https://mp.weixin.qq.com/s/_VIHlUtV3kNDyAXxVmwSpw",
       "verification": "unverified",
       "family": "设计、销售/市场、研发/工程"
-    },
-    {
-      "id": "offer-ext_OTUzMTM=",
-      "company": "绵阳华晨瑞安汽车零部件有限公司",
-      "title": "工程师",
-      "program": "绵阳华晨瑞安汽车零部件有限公司2027校园招聘",
-      "industry": "汽车制造/维修/零配件",
-      "cities": [
-        "绵阳"
-      ],
-      "provinces": [
-        "四川"
-      ],
-      "locations": [
-        {
-          "city": "绵阳",
-          "province": "四川"
-        }
-      ],
-      "cohort": "2027届",
-      "batch": "秋招专场",
-      "deadline": "2026-11-23",
-      "updatedAt": "2026-11-22T09:00:00+08:00",
-      "source": "绵阳华晨瑞安汽车零部件有限公司",
-      "sourceUrl": null,
-      "applyUrl": "https://mp.weixin.qq.com/s/5jhtPFKAL4aOsne3tgKldg",
-      "announcementUrl": "https://mp.weixin.qq.com/s/5jhtPFKAL4aOsne3tgKldg",
-      "verification": "unverified",
-      "family": "研发/工程"
     },
     {
       "id": "offer-ext_OTUzMTI=",
@@ -28286,35 +28257,6 @@
       "announcementUrl": "https://mp.weixin.qq.com/s/rNQUdq54YtgEIliU7KIFog",
       "verification": "unverified",
       "family": "管培生、研发/工程"
-    },
-    {
-      "id": "offer-ext_OTQ2Mjc=",
-      "company": "捷豹路虎（中国）投资有限公司",
-      "title": "管培生",
-      "program": "捷豹路虎2027采购管培生招聘",
-      "industry": "汽车制造/维修/零配件",
-      "cities": [
-        "上海"
-      ],
-      "provinces": [
-        "上海"
-      ],
-      "locations": [
-        {
-          "city": "上海",
-          "province": "上海"
-        }
-      ],
-      "cohort": "2027届",
-      "batch": "秋招专场",
-      "deadline": "2026-11-23",
-      "updatedAt": "2026-11-09T15:22:26+08:00",
-      "source": "捷豹路虎非凡职场",
-      "sourceUrl": null,
-      "applyUrl": "https://app.mokahr.com/campus-recruitment/jlrcareer/95540#/",
-      "announcementUrl": "https://mp.weixin.qq.com/s/X9CcW3lXanb-lXfpEdPWuw",
-      "verification": "unverified",
-      "family": "管培生"
     },
     {
       "id": "offer-ext_OTQ2Mjk=",
@@ -442114,36 +442056,6 @@
       "family": "销售/市场"
     },
     {
-      "company": "国家卫生健康委直属和联系单位",
-      "title": "专业技术岗 1（营养中心），专业技术岗 2（信息处），健康传播与认知行为干预岗，专业技术岗（社区康复指导部），统计调查数据分析岗，医疗人工智能与数据应用研究岗，理论和政策研究岗，专业技术岗（医疗信息化研究部），职业卫生工程研发岗，内科医师岗，外科医师岗，中医医师岗，康复医师岗，项目管理岗（人口文化与基层健康中心），业务部门研究岗 2，项目管理岗（中国生物技术发展中心），综合管理岗",
-      "program": null,
-      "industry": "政府/事业单位/社会组织",
-      "cities": [
-        "北京"
-      ],
-      "provinces": [
-        "北京"
-      ],
-      "locations": [
-        {
-          "city": "北京",
-          "province": "北京"
-        }
-      ],
-      "cohort": "2025届、2026届、2027届",
-      "batch": "秋招专场",
-      "deadline": "2026-11-23",
-      "updatedAt": null,
-      "source": "手动导入",
-      "sourceUrl": null,
-      "applyUrl": "https://socialexam.21wecan.com/#/login",
-      "announcementUrl": "https://www.mohrss.gov.cn/SYrlzyhshbzb/fwyd/SYkaoshizhaopin/zyhgjjgsydwgkzp/zpgg/202611/t20261110_598823.html",
-      "verification": "unverified",
-      "id": "manual-6df6c7f894be1a3edd5d",
-      "manualUpdatedAt": "2026-11-13T17:36:01.404Z",
-      "family": "算法、数据分析、职能、医药/医疗、研发/工程"
-    },
-    {
       "company": "Momenta",
       "title": "电子工程师",
       "program": null,
@@ -447522,36 +447434,6 @@
       "id": "manual-a5b6a5ff487490e1ad3d",
       "manualUpdatedAt": "2026-11-21T08:50:23.245Z",
       "family": "后端开发、前端开发、算法、数据分析、产品、运营、设计、职能"
-    },
-    {
-      "company": "成都市双流区事业单位",
-      "title": "初中地理，初中化学，初中数学，初中物理，初中音乐，初中英语，高中化学，高中历史，高中数学，高中物理，高中英语，高中语文，小学道德与法治，小学数学，小学语文",
-      "program": null,
-      "industry": "教育/培训/科研",
-      "cities": [
-        "成都"
-      ],
-      "provinces": [
-        "四川"
-      ],
-      "locations": [
-        {
-          "city": "成都",
-          "province": "四川"
-        }
-      ],
-      "cohort": "2027届",
-      "batch": "秋招专场",
-      "deadline": "2026-11-23",
-      "updatedAt": null,
-      "source": "手动导入",
-      "sourceUrl": null,
-      "applyUrl": "https://cdpta.cdrsigc.com/frt/register/preLogin.do",
-      "announcementUrl": "https://cdpta.cdrsigc.com/netpage/noticecontent.jsp?typeid=60&contentid=/frt/frtuploadfile/uploadfile/bulletin/2026/6aff86bf7fc6935db34fe1c7ff7f2760.html",
-      "verification": "unverified",
-      "id": "manual-80b32a2b89b6ec88af34",
-      "manualUpdatedAt": "2026-11-21T08:50:23.245Z",
-      "family": "研发/工程"
     },
     {
       "company": "顺丰科技",
