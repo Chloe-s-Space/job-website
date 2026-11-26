@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-26T10:56:53.547Z",
+  "generatedAt": "2026-11-26T23:01:44.587Z",
   "mode": "live",
   "jobs": [
     {
@@ -16801,36 +16801,6 @@
       "family": "算法、金融/财务、销售/市场、职能、研发/工程"
     },
     {
-      "id": "offer-ext_OTUxNzU=",
-      "company": "中国石油大学（北京）",
-      "title": "讲师",
-      "program": "中国石油大学（北京）2027届校园招聘",
-      "industry": "教育/培训/科研",
-      "cities": [
-        "北京"
-      ],
-      "provinces": [
-        "北京"
-      ],
-      "locations": [
-        {
-          "city": "北京",
-          "province": "北京"
-        }
-      ],
-      "cohort": "2027届",
-      "batch": "秋招专场",
-      "deadline": "2026-11-26",
-      "updatedAt": "2026-11-18T16:40:14+08:00",
-      "source": "中国石油大学（北京）人才招聘网",
-      "sourceUrl": null,
-      "applyUrl": "https://hrzp.cup.edu.cn/zp.html#/notice/lVsuIhgqfAkPAATTP3HJDPAATTP",
-      "announcementUrl": "https://hrzp.cup.edu.cn/zp.html#/notice/lVsuIhgqfAkPAATTP3HJDPAATTP",
-      "verification": "unverified",
-      "family": "教育",
-      "manualUpdatedAt": "2026-11-21T08:50:23.245Z"
-    },
-    {
       "id": "offer-ext_OTUxNzY=",
       "company": "福建省水投数字科技有限公司",
       "title": "IT技术",
@@ -17663,35 +17633,6 @@
       "announcementUrl": "https://mp.weixin.qq.com/s/jDo2FHHAwwk1pntho4j4PQ",
       "verification": "unverified",
       "family": "职能"
-    },
-    {
-      "id": "offer-ext_OTUxNDI=",
-      "company": "重庆市融资再担保有限责任公司",
-      "title": "市场",
-      "program": "重庆市融资再担保有限责任公司2027年校园招聘",
-      "industry": "金融业",
-      "cities": [
-        "重庆"
-      ],
-      "provinces": [
-        "重庆"
-      ],
-      "locations": [
-        {
-          "city": "重庆",
-          "province": "重庆"
-        }
-      ],
-      "cohort": "2027届",
-      "batch": "秋招专场",
-      "deadline": "2026-11-26",
-      "updatedAt": "2026-11-18T16:36:42+08:00",
-      "source": "重庆再担保",
-      "sourceUrl": null,
-      "applyUrl": "https://xiaoyuan.zhaopin.com/company/KA0307161088D90000001000?refcode=4444",
-      "announcementUrl": "https://mp.weixin.qq.com/s/_HCoqg9fmtB4ESz1hqr7oQ",
-      "verification": "unverified",
-      "family": "销售/市场"
     },
     {
       "id": "offer-ext_OTUxNDM=",
@@ -452724,36 +452665,6 @@
       "id": "manual-14c73f8a58cea0383e3a",
       "manualUpdatedAt": "2026-11-21T08:50:23.245Z",
       "family": "金融/财务"
-    },
-    {
-      "company": "福州市交通建设集团",
-      "title": "总工办（安全生产办公室）安全管理岗（1 人）；工程管理部工程管理岗（2 人）",
-      "program": null,
-      "industry": "房地产/建筑",
-      "cities": [
-        "福州"
-      ],
-      "provinces": [
-        "福建"
-      ],
-      "locations": [
-        {
-          "city": "福州",
-          "province": "福建"
-        }
-      ],
-      "cohort": "2027届",
-      "batch": "秋招专场",
-      "deadline": "2026-11-26",
-      "updatedAt": null,
-      "source": "手动导入",
-      "sourceUrl": null,
-      "applyUrl": "https://fz.sun-hrm.com/nindex/?ecode=gzstjjsjt",
-      "announcementUrl": "https://www.fzrsrc.cn/news/18_15098.html",
-      "verification": "unverified",
-      "id": "manual-44c54b0a791e5a7ae301",
-      "manualUpdatedAt": "2026-11-21T08:50:23.245Z",
-      "family": "研发/工程"
     },
     {
       "company": "玖治科技",
