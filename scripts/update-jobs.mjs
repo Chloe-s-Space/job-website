@@ -1,4 +1,6 @@
+import path from 'node:path';
 import { readFile, writeFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
 import { mergeCampusJobs, normalizeOffer, normalizeXixicc, validateDataset } from './job-data.mjs';
 
 const DATA_PATH = new URL('../public/jobs.json', import.meta.url);
@@ -54,30 +56,84 @@ async function getXixiccJobs() {
   return items.map(normalizeXixicc).filter(Boolean);
 }
 
-async function main() {
-  if (!permissionOffer && !permissionXixicc) { console.log('数据发布许可尚未配置；保留当前数据。'); return; }
-  const previous = validateDataset(JSON.parse(await readFile(DATA_PATH, 'utf8')));
-  const today = todayInChina();
+/**
+ * Synchronizes enabled campus job sources while isolating individual source failures.
+ */
+export async function syncCampusDataset({
+  previous,
+  today = todayInChina(),
+  permissionOffer = false,
+  permissionXixicc = false,
+  offerApiKey = '',
+  fetchOffer = getOfferJobs,
+  fetchXixicc = getXixiccJobs,
+  warn = console.warn,
+  log = console.log,
+}) {
+  const validatedPrevious = validateDataset(previous);
+  if (!permissionOffer && !permissionXixicc) {
+    log('数据发布许可尚未配置；保留当前数据。');
+    return null;
+  }
   const incoming = [];
+  let succeededSources = 0;
+  let failedSources = 0;
+  let xixiccFetched = false;
   if (permissionOffer) {
-    const key = process.env.OFFER_CAMPUS_API_KEY;
-    if (!key) console.warn('::warning::缺少 OFFER_CAMPUS_API_KEY secret；本次仅同步 xixicc2027');
-    else {
-      try { incoming.push(...await getOfferJobs(key)); }
-      catch (error) { console.warn(`::warning::${error.message}；保留已有 offer 先生记录`); }
+    if (!offerApiKey) {
+      warn('::warning::缺少 OFFER_CAMPUS_API_KEY secret；本次仅同步其他数据源');
+    } else {
+      try {
+        incoming.push(...await fetchOffer(offerApiKey));
+        succeededSources += 1;
+      } catch (error) {
+        failedSources += 1;
+        warn(`::warning::${error.message}；保留已有 offer 先生记录`);
+      }
     }
   }
-  if (permissionXixicc) incoming.push(...await getXixiccJobs());
-  if (!incoming.length && previous.mode !== 'live') throw new Error('本次无可发布记录；保留旧数据');
+  if (permissionXixicc) {
+    try {
+      incoming.push(...await fetchXixicc());
+      xixiccFetched = true;
+      succeededSources += 1;
+    } catch (error) {
+      failedSources += 1;
+      warn(`::warning::${error.message}；保留已有 xixicc2027 记录`);
+    }
+  }
+  if (succeededSources === 0 && failedSources > 0) {
+    throw new Error('所有已启用数据源均抓取失败；保留旧数据');
+  }
+  if (succeededSources === 0) {
+    return null;
+  }
+  if (!incoming.length && validatedPrevious.mode !== 'live') {
+    throw new Error('本次无可发布记录；保留旧数据');
+  }
   const incomingIds = new Set(incoming.map((job) => job.id));
-  const oldJobs = previous.mode === 'live' ? previous.jobs.filter((job) =>
-    (!permissionXixicc || !job.id.startsWith('xixicc-') || (job.manualUpdatedAt && incomingIds.has(job.id)))
+  const oldJobs = validatedPrevious.mode === 'live' ? validatedPrevious.jobs.filter((job) =>
+    (!xixiccFetched || !job.id.startsWith('xixicc-') || (job.manualUpdatedAt && incomingIds.has(job.id)))
   ) : [];
   const jobs = mergeCampusJobs(oldJobs, incoming, today);
   if (!jobs.length) throw new Error('筛选后无可发布的校招记录；保留旧数据');
-  const dataset = validateDataset({ schemaVersion: 1, generatedAt: new Date().toISOString(), mode: 'live', jobs });
-  await writeFile(DATA_PATH, `${JSON.stringify(dataset, null, 2)}\n`, 'utf8');
-  console.log(`已生成 ${jobs.length} 条记录：offer先生 ${jobs.filter((job) => job.id.startsWith('offer-')).length} 条，xixicc2027 ${jobs.filter((job) => job.id.startsWith('xixicc-')).length} 条`);
+  return validateDataset({ schemaVersion: 1, generatedAt: new Date().toISOString(), mode: 'live', jobs });
 }
 
-main().catch((error) => { console.error(error.message); process.exitCode = 1; });
+async function main() {
+  const previous = JSON.parse(await readFile(DATA_PATH, 'utf8'));
+  const dataset = await syncCampusDataset({
+    previous,
+    today: todayInChina(),
+    permissionOffer,
+    permissionXixicc,
+    offerApiKey: process.env.OFFER_CAMPUS_API_KEY,
+  });
+  if (!dataset) return;
+  await writeFile(DATA_PATH, `${JSON.stringify(dataset, null, 2)}\n`, 'utf8');
+  console.log(`已生成 ${dataset.jobs.length} 条记录：offer先生 ${dataset.jobs.filter((job) => job.id.startsWith('offer-')).length} 条，xixicc2027 ${dataset.jobs.filter((job) => job.id.startsWith('xixicc-')).length} 条`);
+}
+
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main().catch((error) => { console.error(error.message); process.exitCode = 1; });
+}

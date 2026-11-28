@@ -227,7 +227,7 @@ export default function InsightsApp() {
 
     <footer className="footer">
       <p><strong>数据说明</strong>招聘状态没有逐条人工核对，投递前以企业公告为准。已经过了截止日期的记录会在同步时移除；没写截止日期的记录，没法据此判断还在不在招。</p>
-      <p>岗位数据来自 <a href="https://developer.offerxiansheng.com/docs/quickstart" target="_blank" rel="noopener noreferrer">offer先生校招 API</a> 与 <a href="https://github.com/xixicc186/xixicc2027" target="_blank" rel="noopener noreferrer">xixicc2027</a>，以及本站手动整理的校招公告（记录中标注为“手动导入”）{data && `；本次统计中三者分别为 ${data.sources.map(([name, count]) => `${name} ${number(count)} 条`).join('、')}`}。每条记录的来源与原始链接见岗位库。</p>
+      <p>岗位数据来自 <a href="https://developer.offerxiansheng.com/docs/quickstart" target="_blank" rel="noopener noreferrer">offer先生校招 API</a>、历史 xixicc2027（原仓库已不可访问，已停止同步，仅保留未过期记录），以及本站手动整理的校招公告（记录中标注为“手动导入”）{data && `；本次统计中三者分别为 ${data.sources.map(([name, count]) => `${name} ${number(count)} 条`).join('、')}`}。每条记录的来源与原始链接见岗位库。</p>
       <p>秋招信库 · 招聘信息索引 · <a href="https://github.com/Chloe-s-Space/job-website" target="_blank" rel="noopener noreferrer">源码（AGPL-3.0）</a></p>
     </footer>
   </div>;
