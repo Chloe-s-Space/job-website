@@ -154,3 +154,49 @@ test('skips xixicc fetch and preserves unexpired xixicc records when permissionX
   assert.ok(dataset);
   assert.deepEqual(dataset.jobs.map((job) => job.id).sort(), ['offer-1', 'xixicc-live']);
 });
+
+test('runs Beisen enrichment when permissionBeisen is true and validates enriched jobs', async () => {
+  const previous = makePrevious([
+    makeJob({ id: 'offer-1', company: '北森企业', title: '管培生', applyUrl: 'https://demo.zhiye.com/campus/jobs' }),
+  ]);
+  let enrichCalled = false;
+  const dataset = await syncCampusDataset({
+    previous,
+    today: TODAY,
+    permissionOffer: true,
+    permissionBeisen: true,
+    offerApiKey: 'test-key',
+    fetchOffer: async () => [],
+    enrichBeisen: async (jobs) => {
+      enrichCalled = true;
+      return {
+        jobs: jobs.map((job) => ({ ...job, title: 'Java开发、产品经理', cities: ['上海', '杭州'], provinces: ['上海', '浙江'] })),
+        stats: { enrichedRecords: 1 },
+      };
+    },
+    warn: () => {},
+    log: () => {},
+  });
+  assert.equal(enrichCalled, true);
+  assert.equal(dataset.jobs[0].title, 'Java开发、产品经理');
+  assert.deepEqual(dataset.jobs[0].cities, ['上海', '杭州']);
+});
+
+test('keeps merged offer records with a warning when Beisen enrichment throws', async () => {
+  const previous = makePrevious([]);
+  const warnings = [];
+  const dataset = await syncCampusDataset({
+    previous,
+    today: TODAY,
+    permissionOffer: true,
+    permissionBeisen: true,
+    offerApiKey: 'test-key',
+    fetchOffer: async () => [makeJob({ id: 'offer-new', company: '新招公司' })],
+    enrichBeisen: async () => { throw new Error('Beisen timeout'); },
+    warn: (message) => warnings.push(message),
+    log: () => {},
+  });
+  assert.equal(warnings.length, 1);
+  assert.match(warnings[0], /Beisen timeout/);
+  assert.deepEqual(dataset.jobs.map((job) => job.id), ['offer-new']);
+});
