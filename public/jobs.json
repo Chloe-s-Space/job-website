@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-28T10:46:12.135Z",
+  "generatedAt": "2026-11-28T11:19:49.763Z",
   "mode": "live",
   "jobs": [
     {
@@ -15616,7 +15616,7 @@
     {
       "id": "offer-ext_OTUyOTc=",
       "company": "杭州迪普科技股份有限公司",
-      "title": "工程师",
+      "title": "售前工程师、网络安全工程师、C开发工程师、测试工程师、FPGA工程师、硬件工程师、人力资源专员",
       "program": "迪普科技 2027 届校园招聘市场岗位限时补录",
       "industry": "IT/互联网/游戏",
       "cities": [
@@ -15649,7 +15649,8 @@
         "呼和浩特",
         "乌鲁木齐",
         "银川",
-        "南宁"
+        "南宁",
+        "全国"
       ],
       "provinces": [
         "北京",
@@ -15814,7 +15815,7 @@
       "applyUrl": "https://dptech.zhiye.com/home",
       "announcementUrl": "https://mp.weixin.qq.com/s/TF5yk_fT24v1UMKNYOTYUA",
       "verification": "unverified",
-      "family": "研发/工程"
+      "family": "测试、硬件/嵌入式、职能、研发/工程"
     },
     {
       "id": "offer-ext_OTUzMDA=",
@@ -17232,13 +17233,26 @@
     {
       "id": "offer-ext_OTUzMDQ=",
       "company": "长江证券股份有限公司",
-      "title": "证券类、市场",
+      "title": "研究员、研究支持岗、机构销售岗、产业管理培训生、总部管理培训生、债券承销岗、投资助理岗、初级策略工程师、做市交易岗、量化投资经理岗、金融产品营销岗、基金投顾营销岗 等17个校招岗位",
       "program": "长江证券2027届集团联合校园招聘",
       "industry": "金融业",
       "cities": [
-        "全国"
+        "全国",
+        "北京",
+        "上海",
+        "济南",
+        "武汉",
+        "深圳",
+        "成都"
       ],
-      "provinces": [],
+      "provinces": [
+        "北京",
+        "上海",
+        "山东",
+        "湖北",
+        "广东",
+        "四川"
+      ],
       "locations": [
         {
           "city": "全国",
@@ -17254,7 +17268,7 @@
       "applyUrl": "https://cjzq.zhiye.com/campus",
       "announcementUrl": "https://mp.weixin.qq.com/s/eVTrmVi2KU7gmXiG8WWVgQ",
       "verification": "unverified",
-      "family": "金融/财务、销售/市场"
+      "family": "金融/财务、销售/市场、管培生、研发/工程"
     },
     {
       "id": "offer-ext_OTUzMDY=",
@@ -21793,14 +21807,46 @@
     {
       "id": "offer-ext_OTUwNzU=",
       "company": "微谱科技集团股份有限公司",
-      "title": "质检类",
+      "title": "销售管培生（27届校招）、技术管培生（27届校招）、实验室工程师管培生（27届校招）、计量工程师管培生（27届校招）、集团战将管培生（27届校招）、助理检测工程师管培生（27届校招）、质量管培生（27届校招）、财务管培生（27届校招）、环境销售管培生（27届校招）、环境技术管培生（27届校招）、汽车电子技术管培生（27届校招）、汽车内外饰技术支持管培生（27届校招） 等27个校招岗位",
       "program": "微谱科技集团2027校园招聘",
       "industry": "检测/认证",
       "cities": [
-        "上海"
+        "上海",
+        "全国",
+        "北京",
+        "天津",
+        "沈阳",
+        "南京",
+        "苏州",
+        "扬州",
+        "宁波",
+        "合肥",
+        "亳州",
+        "赣州",
+        "青岛",
+        "郑州",
+        "武汉",
+        "广州",
+        "东莞",
+        "成都",
+        "西安",
+        "太仓"
       ],
       "provinces": [
-        "上海"
+        "上海",
+        "北京",
+        "天津",
+        "辽宁",
+        "江苏",
+        "浙江",
+        "安徽",
+        "江西",
+        "山东",
+        "河南",
+        "湖北",
+        "广东",
+        "四川",
+        "陕西"
       ],
       "locations": [
         {
@@ -21808,7 +21854,7 @@
           "province": "上海"
         }
       ],
-      "cohort": "2026届",
+      "cohort": "2026届、2027届",
       "batch": "秋招专场",
       "deadline": null,
       "updatedAt": "2026-11-17T16:07:55+08:00",
@@ -21817,7 +21863,7 @@
       "applyUrl": "https://weipugroup.zhiye.com/",
       "announcementUrl": "https://mp.weixin.qq.com/s/7CoaQt4zf_RxgtNkBEBaAg",
       "verification": "unverified",
-      "family": "研发/工程"
+      "family": "硬件/嵌入式、金融/财务、销售/市场、管培生"
     },
     {
       "id": "offer-ext_OTUwNzY=",
@@ -30159,7 +30205,7 @@
     {
       "id": "offer-ext_OTQ4NjU=",
       "company": "广州梵之容化妆品有限公司",
-      "title": "管培生",
+      "title": "直播电商类(2027校招)、影视传媒类(2027校招)、品牌营销类(2027校招)、技术研发类(2027校招)、AI产品类(2027校招)、供应链管理类(2027校招)",
       "program": "谷雨·AI原生管培生招聘计划",
       "industry": "快速消费品",
       "cities": [
@@ -30183,7 +30229,7 @@
       "applyUrl": "https://grainrain.zhiye.com/social/jobs?LocId=%5B%7B%22id%22%3A%224401%22%2C%22label%22%3A%22%E5%B9%BF%E5%B7%9E%E5%B8%82%22%7D%5D",
       "announcementUrl": "https://mp.weixin.qq.com/s/kkPvA1bVesqZUQhYvBvvkg",
       "verification": "unverified",
-      "family": "管培生"
+      "family": "产品、运营、销售/市场、职能、研发/工程"
     },
     {
       "id": "offer-ext_OTQ4NjY=",
@@ -30353,14 +30399,27 @@
     {
       "id": "offer-ext_OTQ4NzM=",
       "company": "博众精工科技股份有限公司",
-      "title": "管培生、工程师",
+      "title": "【3C】机械工程师、运营管培生、客户质量工程师、【数字能源】项目专员（智慧物流）、【3C】软件工程师、【3C】销售专员、【算力】项目专员、【数字能源】售后管培生、【3C】储备干部（综合）、【3C】视觉研发工程师、【3C】项目专员、【3C】应用工程师 等45个校招岗位",
       "program": "博众精工2027校招紧缺补录岗位",
       "industry": "机械/制造业",
       "cities": [
-        "苏州"
+        "苏州",
+        "上海",
+        "常州",
+        "嘉兴",
+        "厦门",
+        "长沙",
+        "宜宾",
+        "其他",
+        "溧阳"
       ],
       "provinces": [
-        "江苏"
+        "江苏",
+        "上海",
+        "浙江",
+        "福建",
+        "湖南",
+        "四川"
       ],
       "locations": [
         {
@@ -30371,13 +30430,13 @@
       "cohort": "2027届",
       "batch": "秋招补招",
       "deadline": null,
-      "updatedAt": "2026-11-12T16:05:37+08:00",
+      "updatedAt": "2026-11-25T09:54:52+08:00",
       "source": "博众精工招聘",
       "sourceUrl": null,
       "applyUrl": "https://bozhon3.zhiye.com/campus",
       "announcementUrl": "https://mp.weixin.qq.com/s/wccwkezaZ4jC9qcVGL3PSg",
       "verification": "unverified",
-      "family": "管培生、研发/工程"
+      "family": "软件开发（综合）、运营、设计、销售/市场、管培生、职能、研发/工程"
     },
     {
       "id": "offer-ext_OTQ4NzQ=",
@@ -31113,14 +31172,23 @@
     {
       "id": "offer-ext_OTQ3OTk=",
       "company": "浙江新和成股份有限公司",
-      "title": "研发类",
+      "title": "日本研究院 研究员（日语要求）、IT岗 运维工程师、IT岗 智能制造顾问（2027）、IT岗 开发工程师（2027）、IT岗 体系管理专员、战略合作与支持专员（新加坡）、战略合作与支持专员（日本）、技术引进顾问（硕士/博士）、工艺包开发工程师、研究员-请根据工作职责选择后续投递方向、博士研究员-请根据工作职责选择后续投递方向、新未来计划-浙江 等80个校招岗位",
       "program": "新和成27校园招聘",
       "industry": "能源/化工/环保",
       "cities": [
-        "绍兴"
+        "绍兴",
+        "日本",
+        "新加坡共和国",
+        "天津",
+        "绥化",
+        "潍坊",
+        "新加坡"
       ],
       "provinces": [
-        "浙江"
+        "浙江",
+        "天津",
+        "黑龙江",
+        "山东"
       ],
       "locations": [
         {
@@ -31131,13 +31199,13 @@
       "cohort": "2026届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": "2026-11-12T16:03:40+08:00",
+      "updatedAt": "2026-11-20T16:03:28+08:00",
       "source": "新和成招聘公众号",
       "sourceUrl": null,
       "applyUrl": "https://xinhecheng1.zhiye.com/",
       "announcementUrl": "https://mp.weixin.qq.com/s/Ff11lWlYy4iKR97aPf-Saw",
       "verification": "unverified",
-      "family": "研发/工程"
+      "family": "后端开发、职能、研发/工程"
     },
     {
       "id": "offer-ext_OTQ4MDA=",
@@ -44214,16 +44282,18 @@
     {
       "id": "offer-ext_OTQ0MDE=",
       "company": "梦尔达科技",
-      "title": "管培生",
+      "title": "2027-执行运营（校招）、2027-投放运营（校招）、2027-koc 媒介（校招）、2027-内容运营（校招）、2027-品牌媒介（校招）、2027-电商运营管培生、2027-营销管培生、2027-新媒体管培生",
       "program": "梦尔达2027届校园招聘",
       "industry": "IT/互联网/游戏",
       "cities": [
         "杭州",
-        "郑州"
+        "郑州",
+        "广州"
       ],
       "provinces": [
         "浙江",
-        "河南"
+        "河南",
+        "广东"
       ],
       "locations": [
         {
@@ -44238,13 +44308,13 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": "2026-11-03T15:08:17+08:00",
+      "updatedAt": "2026-11-17T10:00:29+08:00",
       "source": "梦尔达科技北森招聘官网",
       "sourceUrl": null,
       "applyUrl": "https://mengerda.zhiye.com/campus/jobs",
       "announcementUrl": "https://mengerda.zhiye.com/campus/jobs",
       "verification": "unverified",
-      "family": "管培生",
+      "family": "运营、销售/市场、管培生",
       "manualUpdatedAt": "2026-11-21T08:50:23.245Z"
     },
     {
@@ -44823,7 +44893,10 @@
         "绍兴",
         "潍坊",
         "绥化",
-        "天津"
+        "天津",
+        "日本",
+        "新加坡共和国",
+        "新加坡"
       ],
       "provinces": [
         "浙江",
@@ -44852,7 +44925,7 @@
       "cohort": "2026届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": "2026-11-02T16:49:38+08:00",
+      "updatedAt": "2026-11-20T16:03:28+08:00",
       "source": "黑龙江财经学院就业信息网",
       "sourceUrl": null,
       "applyUrl": "https://xinhecheng1.zhiye.com/",
@@ -47485,7 +47558,7 @@
     {
       "id": "offer-ext_OTQzMDE=",
       "company": "河南梦尔达科技有限公司",
-      "title": "管培生、运营",
+      "title": "2027-执行运营（校招）、2027-投放运营（校招）、2027-koc 媒介（校招）、2027-内容运营（校招）、2027-品牌媒介（校招）、2027-电商运营管培生、2027-营销管培生、2027-新媒体管培生",
       "program": "梦尔达科技2027届校园招聘",
       "industry": "快速消费品",
       "cities": [
@@ -47515,13 +47588,13 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": "2026-11-02T11:32:14+08:00",
+      "updatedAt": "2026-11-17T10:00:29+08:00",
       "source": "梦尔达科技",
       "sourceUrl": null,
       "applyUrl": "https://mengerda.zhiye.com/",
       "announcementUrl": "https://mp.weixin.qq.com/s/OwYZb5gHyTHaom9-qRy3Gg",
       "verification": "unverified",
-      "family": "运营、管培生"
+      "family": "运营、销售/市场、管培生"
     },
     {
       "id": "offer-ext_OTQzMDI=",
@@ -56320,7 +56393,7 @@
     {
       "id": "offer-ext_OTM5NzU=",
       "company": "深圳市威兆半导体股份有限公司",
-      "title": "人事/行政、工程师",
+      "title": "产品工程师、测试工程师、质量工程师、失效分析工程师、可靠性工程师、良率提升工程师、主系统维护工程师、工艺工程师、设备工程师、制程质量工程师、工艺集成研发工程师、采购专员 等19个校招岗位",
       "program": "威兆半导体2027届校园招聘",
       "industry": "通信/电子/半导体",
       "cities": [
@@ -56361,7 +56434,7 @@
       "applyUrl": "https://vgsemi1.zhiye.com/campus/jobs",
       "announcementUrl": "https://mp.weixin.qq.com/s/BQWadHxzu71L94r9HYTXsQ",
       "verification": "unverified",
-      "family": "职能、研发/工程"
+      "family": "测试、职能、研发/工程"
     },
     {
       "id": "offer-ext_OTM5NzY=",
@@ -76937,10 +77010,15 @@
       "program": "上海城投集团2027届校园招聘",
       "industry": "房地产业/建筑业",
       "cities": [
-        "上海"
+        "上海",
+        "宁波",
+        "金华",
+        "南平"
       ],
       "provinces": [
-        "上海"
+        "上海",
+        "浙江",
+        "福建"
       ],
       "locations": [
         {
@@ -88602,7 +88680,7 @@
     {
       "id": "offer-ext_OTMxMTU=",
       "company": "铋盛半导体（西安）有限公司",
-      "title": "工程师、IT技术",
+      "title": "铋盛-采购助理（2027校招）、铋盛-助理制程质量工程师（2027校招）、铋盛-助理客户质量工程师（2027校招）、铋盛-工艺工程师（2027校招）、铋盛-设备工程师（2027校招）、铋盛-生产线技术工（2027校招）、铋盛-生产线技术工-储备组长（2027校招）、铋盛-生产线技术工-储备物料员（2027校招）、铋盛-设备技术员（2027校招）、铋盛-来料检验员（2027校招）、铋盛-制程检验员（2027校招）、铋盛-工艺技术员（2027校招）",
       "program": "铋盛半导体2027届校园招聘",
       "industry": "通信/电子/半导体",
       "cities": [
@@ -88626,7 +88704,7 @@
       "applyUrl": "https://laserx2.zhiye.com/campus/jobs",
       "announcementUrl": "https://laserx2.zhiye.com/campus/jobs",
       "verification": "unverified",
-      "family": "软件开发（综合）、研发/工程"
+      "family": "管培生、职能、研发/工程"
     },
     {
       "id": "offer-ext_OTMxMTY=",
@@ -96957,7 +97035,7 @@
     {
       "id": "offer-ext_OTI3NjI=",
       "company": "宁波旭升集团股份有限公司",
-      "title": "工程师",
+      "title": "27届过程质量工程师、27届采购工程师、27届工艺工程师、27届电气工程师、27届设备工程师、27届产品设计工程师、27届成型工艺工程师、27届产品开发工程师、27届客户质量工程师、27届计划专员、27届物流专员、27届跟单专员 等15个校招岗位",
       "program": "宁波旭升集团2027届校园招聘",
       "industry": "机械/制造业",
       "cities": [
@@ -96980,13 +97058,13 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": "2026-10-12T15:10:32+08:00",
+      "updatedAt": "2026-10-19T16:36:27+08:00",
       "source": "宁波旭升集团招聘官网",
       "sourceUrl": null,
       "applyUrl": "https://xsjthr.zhiye.com/campus/jobs",
       "announcementUrl": "https://xsjthr.zhiye.com/campus/jobs",
       "verification": "unverified",
-      "family": "研发/工程"
+      "family": "软件开发（综合）、职能、研发/工程"
     },
     {
       "id": "offer-ext_OTI3NjQ=",
@@ -97748,13 +97826,24 @@
     {
       "id": "offer-ext_OTI3ODA=",
       "company": "唐人神集团股份有限公司",
-      "title": "管培生",
+      "title": "（27届）运维服务工程师、（27届）IT产品经理管培生、（27届）生产管培生-比利美英伟专区、（27届）技术服务营销管培生-比利美英伟专区、（27届）财务管培生-肉品板块、（27届）财务管培生-饲料板块、（27届）财务管培生-集团总部、（27届）人资管培生-饲料板块、（27届）物流管培生-肉品板块、（27届）采购管培生、（27届）基地综合服务类管培生-饲料板块、（27届）质量管培生-肉品板块 等21个校招岗位",
       "program": "唐人神2027届校园招聘",
       "industry": "农林牧渔",
       "cities": [
-        "全国"
+        "全国",
+        "上海",
+        "江苏",
+        "安徽",
+        "株洲",
+        "广东"
       ],
-      "provinces": [],
+      "provinces": [
+        "上海",
+        "江苏",
+        "安徽",
+        "湖南",
+        "广东"
+      ],
       "locations": [
         {
           "city": "全国",
@@ -97764,13 +97853,13 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": "2026-10-12T15:01:33+08:00",
+      "updatedAt": "2026-10-15T17:16:49+08:00",
       "source": "唐人神招聘门户",
       "sourceUrl": null,
       "applyUrl": "https://trsgroup1.zhiye.com/campus/jobs",
       "announcementUrl": "https://trsgroup1.zhiye.com/campus/jobs",
       "verification": "unverified",
-      "family": "管培生",
+      "family": "软件开发（综合）、产品、金融/财务、销售/市场、管培生、职能、研发/工程",
       "manualUpdatedAt": "2026-10-30T13:19:52.477Z"
     },
     {
@@ -110725,13 +110814,14 @@
     {
       "id": "offer-ext_OTIzNDk=",
       "company": "杭州美仪自动化技术股份有限公司",
-      "title": "研发类",
+      "title": "新媒体运营—2027届、物联网产品应用工程师（偏研究与实施）—2027届、客户运营—2027届、传感器研发工程师—2027届、产品认证工程师—2027届、渠道运营专员—2027届、电商/搜索运营专员—2027届、产品工程师—2027届、海外技术支持工程师—2027届、国内技术支持工程师—2027届、跨境电商运营专员—2027届、技术销售工程师—2027届 等20个校招岗位",
       "program": "美仪股份2027届校园招聘",
       "industry": "机械/制造业",
       "cities": [
         "嘉兴",
         "杭州",
-        "乌鲁木齐"
+        "乌鲁木齐",
+        "桐乡"
       ],
       "provinces": [
         "浙江",
@@ -110754,13 +110844,13 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": "2026-10-08T16:29:02+08:00",
+      "updatedAt": "2026-11-18T15:00:06+08:00",
       "source": "美仪股份招聘官网",
       "sourceUrl": null,
       "applyUrl": "https://supmea1.zhiye.com/jobs",
       "announcementUrl": "https://supmea1.zhiye.com/jobs",
       "verification": "unverified",
-      "family": "研发/工程"
+      "family": "运营、销售/市场、研发/工程"
     },
     {
       "id": "offer-ext_OTIzNTA=",
@@ -120979,14 +121069,18 @@
     {
       "id": "offer-ext_OTE4Njc=",
       "company": "北京道旅科技有限公司",
-      "title": "人工智能",
+      "title": "海外渠道运营（深圳）、业务助理 （ME）、后端开发工程师、数据开发、AI应用研究、市场营销助理(Marketing Assistant)、业务拓展经理、海外渠道运营（上海）、中国直签运营（上海/北京）、技术运营",
       "program": "道旅科技2026年校园招聘",
       "industry": "IT/互联网/游戏",
       "cities": [
-        "深圳"
+        "深圳",
+        "北京",
+        "上海"
       ],
       "provinces": [
-        "广东"
+        "广东",
+        "北京",
+        "上海"
       ],
       "locations": [
         {
@@ -120997,13 +121091,13 @@
       "cohort": "2026届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": "2026-09-30T12:03:57+08:00",
+      "updatedAt": "2026-10-12T11:08:47+08:00",
       "source": "道旅科技招聘官网",
       "sourceUrl": null,
       "applyUrl": "https://dida.zhiye.com/campus/detail?jobAdId=e67b598c-480e-44d8-867b-8b97cffec439&sessionid=",
       "announcementUrl": "https://dida.zhiye.com/campus/detail?jobAdId=e67b598c-480e-44d8-867b-8b97cffec439&sessionid=",
       "verification": "unverified",
-      "family": "算法"
+      "family": "后端开发、算法、运营、销售/市场"
     },
     {
       "id": "offer-ext_OTE4Njg=",
@@ -135514,18 +135608,19 @@
     {
       "id": "offer-ext_OTEyNDQ=",
       "company": "江苏中旗科技股份有限公司",
-      "title": "市场、运营",
+      "title": "（富莱格）原药销售（国内）应届生、（富莱格）原药销售（国际）应届生、（作物）制剂销售（国内）应届生、（宁亿泰）分析技术员应届生、（国瑞）分析技术员应届生、（国瑞）仪表技术员应届生、（国瑞）安全技术员应届生、（国瑞）设备技术员应届生、（国瑞）工艺技术员应届生、商服岗、（宁亿泰）环保技术员应届生、研发-分析中级研究员 等31个校招岗位",
       "program": "中旗股份2027校园招聘",
       "industry": "能源/化工/环保",
       "cities": [
         "南京",
         "淮安",
-        "淮北"
+        "淮北",
+        "全国"
       ],
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": "2026-09-24T14:25:26+08:00",
+      "updatedAt": "2026-10-15T12:33:18+08:00",
       "source": "中旗股份",
       "sourceUrl": null,
       "applyUrl": "https://flagchem.zhiye.com/campus",
@@ -135549,7 +135644,7 @@
           "province": "安徽"
         }
       ],
-      "family": "运营、销售/市场"
+      "family": "销售/市场、医药/医疗、研发/工程"
     },
     {
       "id": "offer-ext_OTEyNDU=",
@@ -140465,14 +140560,20 @@
     {
       "id": "offer-ext_OTE0MDk=",
       "company": "江西沃格光电集团股份有限公司",
-      "title": "工程师",
+      "title": "FAE工程师、开发质量工程师、产品开发工程师、仿真工程师、工艺开发工程师、电子工程师、结构工程师、光学工程师、生产管理工程师、设备管理工程师、测试设备管理工程师、工艺/良率工程师 等20个校招岗位",
       "program": "沃格光电2026年校园招聘",
       "industry": "通信/电子/半导体",
       "cities": [
-        "东莞"
+        "东莞",
+        "新余",
+        "天门",
+        "成都"
       ],
       "provinces": [
-        "广东"
+        "广东",
+        "江西",
+        "湖北",
+        "四川"
       ],
       "locations": [
         {
@@ -140480,16 +140581,16 @@
           "province": "广东"
         }
       ],
-      "cohort": "2026届",
+      "cohort": "2026届、2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": "2026-09-23T14:46:07+08:00",
+      "updatedAt": "2026-11-02T14:52:55+08:00",
       "source": "沃格集团招聘官网",
       "sourceUrl": null,
       "applyUrl": "https://wgtechjx.zhiye.com/campus/jobs",
       "announcementUrl": "https://wgtechjx.zhiye.com/campus/jobs",
       "verification": "unverified",
-      "family": "研发/工程"
+      "family": "测试、硬件/嵌入式、研发/工程"
     },
     {
       "id": "offer-ext_OTE0MTA=",
@@ -143212,7 +143313,7 @@
     {
       "id": "offer-ext_OTEzMzA=",
       "company": "德力西电气有限公司",
-      "title": "管培生",
+      "title": "电商培训生、家居结构研发培训生、AI应用开发专员、产品技术支持培训生、技术型行业销售培训生（华南）、技术型行业销售培训生（华北&华东）、技术型行业销售培训生（华中）、渠道销售培训生（华南&华西）、渠道销售培训生（华北&华东）、渠道销售培训生（中区）、海外市场卓越培训生、家居产品培训生 等38个校招岗位",
       "program": "德力西电气2026年校园招聘",
       "industry": "通信/电子/半导体",
       "cities": [
@@ -143229,7 +143330,17 @@
         "合肥",
         "天津",
         "重庆",
-        "西安"
+        "西安",
+        "全国",
+        "石家庄",
+        "太原",
+        "呼和浩特",
+        "沈阳",
+        "南京",
+        "无锡",
+        "郑州",
+        "濮阳",
+        "长沙"
       ],
       "provinces": [
         "浙江",
@@ -143241,7 +143352,14 @@
         "山东",
         "天津",
         "重庆",
-        "陕西"
+        "陕西",
+        "河北",
+        "山西",
+        "内蒙古",
+        "辽宁",
+        "江苏",
+        "河南",
+        "湖南"
       ],
       "locations": [
         {
@@ -143301,7 +143419,7 @@
           "province": "陕西"
         }
       ],
-      "cohort": "2026届",
+      "cohort": "2026届、2027届",
       "batch": "秋招专场",
       "deadline": null,
       "updatedAt": "2026-09-23T13:34:33+08:00",
@@ -143310,7 +143428,7 @@
       "applyUrl": "https://delixi-electric3.zhiye.com/campus/jobs",
       "announcementUrl": "https://delixi-electric3.zhiye.com/campus/jobs",
       "verification": "unverified",
-      "family": "管培生"
+      "family": "算法、运营、销售/市场、管培生"
     },
     {
       "id": "offer-ext_OTEzMzE=",
@@ -147862,7 +147980,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": "2026-09-22T14:01:54+08:00",
+      "updatedAt": "2026-11-02T14:52:55+08:00",
       "source": "沃格光电",
       "sourceUrl": null,
       "applyUrl": "https://wgtechjx.zhiye.com/campus",
@@ -154238,7 +154356,21 @@
         "芜湖",
         "长沙",
         "青岛",
-        "全国"
+        "全国",
+        "天津",
+        "石家庄",
+        "太原",
+        "呼和浩特",
+        "沈阳",
+        "无锡",
+        "合肥",
+        "福州",
+        "南昌",
+        "济南",
+        "郑州",
+        "深圳",
+        "重庆",
+        "西安"
       ],
       "provinces": [
         "上海",
@@ -154248,7 +154380,16 @@
         "河南",
         "安徽",
         "湖南",
-        "山东"
+        "山东",
+        "天津",
+        "河北",
+        "山西",
+        "内蒙古",
+        "辽宁",
+        "福建",
+        "江西",
+        "重庆",
+        "陕西"
       ],
       "locations": [
         {
@@ -158439,7 +158580,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": "2026-09-20T13:39:22+08:00",
+      "updatedAt": "2026-11-20T13:42:36+08:00",
       "source": "吉翼具身智能",
       "sourceUrl": null,
       "applyUrl": "https://jiyijushen.zhiye.com/campus",
@@ -164136,7 +164277,12 @@
         "哈尔滨",
         "合肥",
         "郑州",
-        "南通"
+        "南通",
+        "全国",
+        "江苏",
+        "浙江",
+        "福建",
+        "海南"
       ],
       "provinces": [
         "北京",
@@ -164154,7 +164300,9 @@
         "黑龙江",
         "安徽",
         "河南",
-        "江苏"
+        "江苏",
+        "福建",
+        "海南"
       ],
       "locations": [
         {
@@ -173139,7 +173287,8 @@
         "湖州",
         "乌兰察布",
         "铜仁",
-        "贵阳"
+        "贵阳",
+        "全国"
       ],
       "provinces": [
         "广东",
@@ -173174,10 +173323,10 @@
           "province": "贵州"
         }
       ],
-      "cohort": "2026届",
+      "cohort": "2026届、2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": "2026-09-14T16:55:21+08:00",
+      "updatedAt": "2026-11-11T09:36:41+08:00",
       "source": "凯金新能源招聘公众号",
       "sourceUrl": null,
       "applyUrl": "https://kaijin2.zhiye.com/",
@@ -175169,7 +175318,8 @@
         "湖州",
         "乌兰察布",
         "铜仁",
-        "贵阳"
+        "贵阳",
+        "全国"
       ],
       "provinces": [
         "广东",
@@ -175207,7 +175357,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": "2026-09-11T10:46:55+08:00",
+      "updatedAt": "2026-11-11T09:36:41+08:00",
       "source": "凯金新能源招聘",
       "sourceUrl": null,
       "applyUrl": "https://kaijin2.zhiye.com/campus",
@@ -177203,10 +177353,12 @@
       "program": "林氏家居2027校园招聘",
       "industry": "耐用消费品",
       "cities": [
-        "佛山"
+        "佛山",
+        "青岛"
       ],
       "provinces": [
-        "广东"
+        "广东",
+        "山东"
       ],
       "locations": [
         {
@@ -177217,7 +177369,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": "2026-09-09T11:55:30+08:00",
+      "updatedAt": "2026-09-09T09:12:52.553Z",
       "source": "林氏范",
       "sourceUrl": null,
       "applyUrl": "https://linshimuye.zhiye.com/campus/jobs",
@@ -179371,7 +179523,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": "2026-09-07T14:04:07+08:00",
+      "updatedAt": "2026-10-21T09:10:26+08:00",
       "source": "优博讯",
       "sourceUrl": null,
       "applyUrl": "https://urovo.zhiye.com/campus",
@@ -192585,22 +192737,35 @@
     {
       "id": "xixicc-7a512bee7af0dc375fe1",
       "company": "新和成",
-      "title": "校招项目",
+      "title": "日本研究院 研究员（日语要求）、IT岗 运维工程师、IT岗 智能制造顾问（2027）、IT岗 开发工程师（2027）、IT岗 体系管理专员、战略合作与支持专员（新加坡）、战略合作与支持专员（日本）、技术引进顾问（硕士/博士）、工艺包开发工程师、研究员-请根据工作职责选择后续投递方向、博士研究员-请根据工作职责选择后续投递方向、新未来计划-浙江 等80个校招岗位",
       "program": null,
       "industry": "制造业",
-      "cities": [],
-      "provinces": [],
+      "cities": [
+        "日本",
+        "新加坡共和国",
+        "天津",
+        "绥化",
+        "绍兴",
+        "潍坊",
+        "新加坡"
+      ],
+      "provinces": [
+        "天津",
+        "黑龙江",
+        "浙江",
+        "山东"
+      ],
       "locations": [],
       "cohort": "2027届",
       "batch": "提前批",
       "deadline": null,
-      "updatedAt": "2026-07-06T00:00:00.000Z",
+      "updatedAt": "2026-11-20T16:03:28+08:00",
       "source": "xixicc2027",
       "sourceUrl": "https://github.com/xixicc186/xixicc2027/blob/main/jobs.json",
       "applyUrl": "https://xinhecheng1.zhiye.com/campus",
       "announcementUrl": "https://mp.weixin.qq.com/s/8yXShQXkWwRH2fFtG_PU2Q",
       "verification": "unverified",
-      "family": "其他",
+      "family": "后端开发、职能、研发/工程",
       "manualUpdatedAt": "2026-11-21T08:50:23.245Z"
     },
     {
@@ -197342,10 +197507,13 @@
       "industry": "电子/通信/半导体、制造业",
       "cities": [
         "杭州",
-        "桐乡"
+        "桐乡",
+        "嘉兴",
+        "乌鲁木齐"
       ],
       "provinces": [
-        "浙江"
+        "浙江",
+        "新疆"
       ],
       "locations": [
         {
@@ -197360,7 +197528,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-18T15:00:06+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://supmea1.zhiye.com/jobs",
@@ -205672,14 +205840,18 @@
     },
     {
       "company": "道旅科技",
-      "title": "AI应用研究员",
+      "title": "海外渠道运营（深圳）、业务助理 （ME）、后端开发工程师、数据开发、AI应用研究、市场营销助理(Marketing Assistant)、业务拓展经理、海外渠道运营（上海）、中国直签运营（上海/北京）、技术运营",
       "program": null,
       "industry": "IT/互联网/游戏",
       "cities": [
-        "深圳"
+        "深圳",
+        "北京",
+        "上海"
       ],
       "provinces": [
-        "广东"
+        "广东",
+        "北京",
+        "上海"
       ],
       "locations": [
         {
@@ -205690,7 +205862,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-10-12T11:08:47+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://dida.zhiye.com/campus/detail?jobAdId=e67b598c-480e-44d8-867b-8b97cffec439",
@@ -205698,7 +205870,7 @@
       "verification": "unverified",
       "id": "manual-cf38428ab984f9da6d42",
       "manualUpdatedAt": "2026-10-09T05:17:08.197Z",
-      "family": "算法"
+      "family": "后端开发、算法、运营、销售/市场"
     },
     {
       "company": "外研社",
@@ -208373,7 +208545,7 @@
       "cohort": "2026届、2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-09-18T17:05:19+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://grainrain.zhiye.com/campus",
@@ -212944,7 +213116,8 @@
       "cities": [
         "淮安",
         "淮北",
-        "南京"
+        "南京",
+        "全国"
       ],
       "provinces": [
         "江苏",
@@ -212967,7 +213140,7 @@
       "cohort": "2025届、2026届、2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-10-15T12:33:18+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://flagchem.zhiye.com/campus",
@@ -213245,12 +213418,27 @@
         "佛山",
         "杭州",
         "宁波",
-        "天津"
+        "天津",
+        "上海",
+        "无锡",
+        "南昌",
+        "武汉",
+        "长沙",
+        "重庆",
+        "西安",
+        "慈溪"
       ],
       "provinces": [
         "广东",
         "浙江",
-        "天津"
+        "天津",
+        "上海",
+        "江苏",
+        "江西",
+        "湖北",
+        "湖南",
+        "重庆",
+        "陕西"
       ],
       "locations": [
         {
@@ -213273,7 +213461,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-18T17:25:50+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://zdldoa1.zhiye.com/campus",
@@ -216841,9 +217029,18 @@
       "program": null,
       "industry": "电子/通信/半导体、制造业",
       "cities": [
-        "顶级节点"
+        "顶级节点",
+        "新余",
+        "天门",
+        "东莞",
+        "成都"
       ],
-      "provinces": [],
+      "provinces": [
+        "江西",
+        "湖北",
+        "广东",
+        "四川"
+      ],
       "locations": [
         {
           "city": "顶级节点",
@@ -216853,7 +217050,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-02T14:52:55+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://wgtechjx.zhiye.com/campus/jobs",
@@ -218317,10 +218514,19 @@
       "program": null,
       "industry": "专业服务",
       "cities": [
-        "广州"
+        "广州",
+        "太原",
+        "南京",
+        "福州",
+        "厦门",
+        "济南"
       ],
       "provinces": [
-        "广东"
+        "广东",
+        "山西",
+        "江苏",
+        "福建",
+        "山东"
       ],
       "locations": [
         {
@@ -218331,7 +218537,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-09-21T10:31:26.451Z",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://sinongcpa1.zhiye.com/campus/jobs",
@@ -220146,7 +220352,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-08-20T11:16:50+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://raumplus.zhiye.com/campus/jobs",
@@ -222371,7 +222577,22 @@
         "上海",
         "温州",
         "芜湖",
-        "长沙"
+        "长沙",
+        "全国",
+        "天津",
+        "石家庄",
+        "太原",
+        "呼和浩特",
+        "沈阳",
+        "无锡",
+        "合肥",
+        "福州",
+        "南昌",
+        "济南",
+        "郑州",
+        "深圳",
+        "重庆",
+        "西安"
       ],
       "provinces": [
         "广东",
@@ -222381,7 +222602,16 @@
         "山东",
         "上海",
         "安徽",
-        "湖南"
+        "湖南",
+        "天津",
+        "河北",
+        "山西",
+        "内蒙古",
+        "辽宁",
+        "福建",
+        "江西",
+        "重庆",
+        "陕西"
       ],
       "locations": [
         {
@@ -222424,7 +222654,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-09-19T19:05:48+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://delixi-electric3.zhiye.com/campus/jobs",
@@ -224926,7 +225156,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-20T13:42:36+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://jiyijushen.zhiye.com/campus",
@@ -232149,7 +232379,12 @@
         "武汉",
         "西安",
         "长沙",
-        "郑州"
+        "郑州",
+        "全国",
+        "江苏",
+        "浙江",
+        "福建",
+        "海南"
       ],
       "provinces": [
         "北京",
@@ -232167,7 +232402,9 @@
         "湖北",
         "陕西",
         "湖南",
-        "河南"
+        "河南",
+        "福建",
+        "海南"
       ],
       "locations": [
         {
@@ -232250,7 +232487,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-09-15T23:32:55+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://cmpo.zhiye.com/campus/jobs",
@@ -232433,9 +232670,34 @@
       "program": null,
       "industry": "农林牧渔",
       "cities": [
-        "全国"
+        "全国",
+        "辽宁",
+        "浙江",
+        "安徽",
+        "河南",
+        "湖北",
+        "湖南",
+        "广东",
+        "广西",
+        "重庆",
+        "四川",
+        "贵州",
+        "云南"
       ],
-      "provinces": [],
+      "provinces": [
+        "辽宁",
+        "浙江",
+        "安徽",
+        "河南",
+        "湖北",
+        "湖南",
+        "广东",
+        "广西",
+        "重庆",
+        "四川",
+        "贵州",
+        "云南"
+      ],
       "locations": [
         {
           "city": "全国",
@@ -232445,7 +232707,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-09-17T11:04:13+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://yangxiang.zhiye.com/Campus/jobs",
@@ -237894,7 +238156,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-10-30T11:47:51+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://hprt1.zhiye.com/campus",
@@ -262811,7 +263073,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-09-09T16:10:26+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://cxtc-jt2.zhiye.com/campus/jobs",
@@ -269767,7 +270029,17 @@
         "全国",
         "深圳",
         "天津",
-        "香港"
+        "香港",
+        "大连",
+        "上海",
+        "南京",
+        "苏州",
+        "青岛",
+        "郑州",
+        "武汉",
+        "东莞",
+        "广西",
+        "西安"
       ],
       "provinces": [
         "北京",
@@ -269775,7 +270047,15 @@
         "浙江",
         "广东",
         "天津",
-        "香港"
+        "香港",
+        "辽宁",
+        "上海",
+        "江苏",
+        "山东",
+        "河南",
+        "湖北",
+        "广西",
+        "陕西"
       ],
       "locations": [
         {
@@ -269810,7 +270090,7 @@
       "cohort": "2026届、2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-05T16:38:47.618Z",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://shining3d.zhiye.com/campus",
@@ -271245,7 +271525,8 @@
         "湖州",
         "铜仁",
         "乌兰察布",
-        "盐城"
+        "盐城",
+        "全国"
       ],
       "provinces": [
         "广东",
@@ -271283,7 +271564,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-11T09:36:41+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://kaijin2.zhiye.com/campus",
@@ -274276,12 +274557,26 @@
       "cities": [
         "北京",
         "上海",
-        "西安"
+        "西安",
+        "全国",
+        "杭州",
+        "合肥",
+        "武汉",
+        "广州",
+        "深圳",
+        "重庆",
+        "成都"
       ],
       "provinces": [
         "北京",
         "上海",
-        "陕西"
+        "陕西",
+        "浙江",
+        "安徽",
+        "湖北",
+        "广东",
+        "重庆",
+        "四川"
       ],
       "locations": [
         {
@@ -274300,7 +274595,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-10-20T09:20:48+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://grand2012.zhiye.com/jobs?queryId=f570b2f1-5034-4689-9d3c-4908fa52e515",
@@ -276243,7 +276538,7 @@
     },
     {
       "company": "新和成",
-      "title": "智能制造专项",
+      "title": "日本研究院 研究员（日语要求）、IT岗 运维工程师、IT岗 智能制造顾问（2027）、IT岗 开发工程师（2027）、IT岗 体系管理专员、战略合作与支持专员（新加坡）、战略合作与支持专员（日本）、技术引进顾问（硕士/博士）、工艺包开发工程师、研究员-请根据工作职责选择后续投递方向、博士研究员-请根据工作职责选择后续投递方向、新未来计划-浙江 等80个校招岗位",
       "program": null,
       "industry": "医疗/医药/生物",
       "cities": [
@@ -276251,7 +276546,10 @@
         "绍兴",
         "绥化",
         "天津",
-        "潍坊"
+        "潍坊",
+        "日本",
+        "新加坡共和国",
+        "新加坡"
       ],
       "provinces": [
         "浙江",
@@ -276284,7 +276582,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-20T16:03:28+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://xinhecheng1.zhiye.com/jobs?activityGuid=d3e0f914-ee3d-49e2-84cb-948e62eaa328",
@@ -276292,7 +276590,7 @@
       "verification": "unverified",
       "id": "manual-5ef1accd39f9479c490f",
       "manualUpdatedAt": "2026-10-09T05:17:08.197Z",
-      "family": "研发/工程"
+      "family": "后端开发、职能、研发/工程"
     },
     {
       "company": "洛轴股份",
@@ -276465,7 +276763,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-09-24T13:50:37+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://sgssemi.zhiye.com/campus",
@@ -276601,7 +276899,8 @@
         "泰安",
         "无锡",
         "西安",
-        "烟台"
+        "烟台",
+        "海阳"
       ],
       "provinces": [
         "北京",
@@ -276639,7 +276938,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-09-04T15:07:56+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://orienspace.zhiye.com/campus/jobs",
@@ -285134,7 +285433,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-20T00:10:40+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://cimm.zhiye.com/",
@@ -294368,7 +294667,7 @@
     },
     {
       "company": "华夏飞机维修工程有限公司",
-      "title": "维修学员",
+      "title": "维修学员、27届优质人才计划-运行管理类（重庆）、27届优质人才计划-市场管理类（重庆）、27届优质人才计划-签派类（重庆）、27届优质人才计划-维修工程类（重庆）、27届优质人才计划-职能管理类（重庆）",
       "program": null,
       "industry": "交通/物流/仓储",
       "cities": [
@@ -294379,14 +294678,16 @@
         "贵阳",
         "喀什",
         "库尔勒",
-        "衢州"
+        "衢州",
+        "巴音郭楞蒙古自治州"
       ],
       "provinces": [
         "内蒙古",
         "四川",
         "重庆",
         "贵州",
-        "浙江"
+        "浙江",
+        "新疆"
       ],
       "locations": [
         {
@@ -294425,7 +294726,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-09-07T17:30:44.486Z",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://hxhk.zhiye.com/campus/jobs",
@@ -294433,7 +294734,7 @@
       "verification": "unverified",
       "id": "manual-d9a1ad9fb3416bb4d47d",
       "manualUpdatedAt": "2026-10-09T05:17:08.197Z",
-      "family": "其他"
+      "family": "销售/市场、职能、研发/工程"
     },
     {
       "company": "航空工业未来智能作战管理系统技术协同创新中心（北京）",
@@ -296987,10 +297288,12 @@
       "program": null,
       "industry": "消费品",
       "cities": [
-        "佛山"
+        "佛山",
+        "青岛"
       ],
       "provinces": [
-        "广东"
+        "广东",
+        "山东"
       ],
       "locations": [
         {
@@ -297001,7 +297304,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": "2026-12-31",
-      "updatedAt": null,
+      "updatedAt": "2026-09-09T09:12:52.553Z",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://linshimuye.zhiye.com/campus/jobs",
@@ -297628,7 +297931,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-10-19T19:13:58+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://xchengtech.zhiye.com/",
@@ -297961,7 +298264,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-08-21T18:31:47+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://bdstar.zhiye.com/campus/jobs",
@@ -299144,7 +299447,8 @@
       "industry": "IT/互联网/游戏",
       "cities": [
         "厦门",
-        "深圳"
+        "深圳",
+        "漳州"
       ],
       "provinces": [
         "福建",
@@ -299163,7 +299467,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-09-07T22:08:04+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://leedarson.zhiye.com/Campus",
@@ -299983,7 +300287,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-08-26T13:20:40+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://fusion-materials.zhiye.com/campus/jobs",
@@ -303852,7 +304156,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-10T15:01:57.634Z",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://jnzhaopin.zhiye.com/campus/jobs?memory=&silence=1",
@@ -306044,7 +306348,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-09-01T16:50:18.835Z",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://rifengdz.zhiye.com/campus/jobs",
@@ -307340,7 +307644,8 @@
         "武汉",
         "西安",
         "长春",
-        "郑州"
+        "郑州",
+        "全国"
       ],
       "provinces": [
         "北京",
@@ -307394,7 +307699,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-09-07T09:54:58+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://dptech.zhiye.com/home",
@@ -310837,7 +311142,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-09-07T10:02:21+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://robotphoenix.zhiye.com/campus/jobs",
@@ -317308,13 +317613,18 @@
         "济宁",
         "南京",
         "青岛",
-        "上海"
+        "上海",
+        "海外",
+        "临沂",
+        "德州",
+        "武汉"
       ],
       "provinces": [
         "北京",
         "山东",
         "江苏",
-        "上海"
+        "上海",
+        "湖北"
       ],
       "locations": [
         {
@@ -317345,7 +317655,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-09-03T10:50:09+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://shantui.zhiye.com/campus/jobs?memory=&silence=1",
@@ -318078,11 +318388,13 @@
         "广州",
         "上海",
         "深圳",
-        "珠海"
+        "珠海",
+        "武汉"
       ],
       "provinces": [
         "广东",
-        "上海"
+        "上海",
+        "湖北"
       ],
       "locations": [
         {
@@ -318105,7 +318417,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-10-21T09:10:26+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://urovo.zhiye.com/campus/jobs",
@@ -321543,7 +321855,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-09-24T17:45:05+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://tengen.zhiye.com/campus",
@@ -325071,7 +325383,7 @@
     },
     {
       "company": "天地和兴",
-      "title": "研发工程师测试工程师 项目交付工程师",
+      "title": "校招-储备干部（研发方向）、校招-储备干部（业务方向）、校招-项目交付工程师（武汉/青岛/西安）、校招-前端开发工程师（北京）、校招-Java开发工程师（北京）、校招-测试工程师（北京/武汉/西安）、校招-Web后台开发工程师（西安）、校招-Web后台开发工程师（武汉）、校招-Linux 嵌入式开发工程师（西安）、校招-Linux 嵌入式开发工程师（武汉）",
       "program": null,
       "industry": "IT/互联网/游戏",
       "cities": [
@@ -325107,7 +325419,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-10-26T12:16:39+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://tdhx.zhiye.com/campus/jobs",
@@ -325115,7 +325427,7 @@
       "verification": "unverified",
       "id": "manual-6cc980f801ba1c75c4e3",
       "manualUpdatedAt": "2026-10-09T05:17:08.197Z",
-      "family": "测试"
+      "family": "后端开发、前端开发、测试、硬件/嵌入式、设计、管培生、研发/工程"
     },
     {
       "company": "中建电力",
@@ -342547,9 +342859,16 @@
       "program": null,
       "industry": "农林牧渔",
       "cities": [
-        "全国"
+        "全国",
+        "广东",
+        "广西",
+        "云南"
       ],
-      "provinces": [],
+      "provinces": [
+        "广东",
+        "广西",
+        "云南"
+      ],
       "locations": [
         {
           "city": "全国",
@@ -342559,7 +342878,7 @@
       "cohort": "2025届、2026届、2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-10-28T10:07:16+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://ynsnjt.zhiye.com/campus/jobs",
@@ -348311,7 +348630,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-02T09:03:53+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://yfy.zhiye.com/campus/jobs",
@@ -352689,12 +353008,21 @@
       "cities": [
         "上海",
         "苏州",
-        "长沙"
+        "长沙",
+        "常州",
+        "嘉兴",
+        "厦门",
+        "宜宾",
+        "其他",
+        "溧阳"
       ],
       "provinces": [
         "上海",
         "江苏",
-        "湖南"
+        "湖南",
+        "浙江",
+        "福建",
+        "四川"
       ],
       "locations": [
         {
@@ -352713,7 +353041,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-25T09:54:52+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://bozhon3.zhiye.com/campus/jobs",
@@ -358711,10 +359039,23 @@
       "program": null,
       "industry": "交通/物流/仓储",
       "cities": [
-        "重庆"
+        "重庆",
+        "包头",
+        "衢州",
+        "成都",
+        "贵阳",
+        "巴音郭楞蒙古自治州",
+        "库尔勒",
+        "阿克苏",
+        "喀什"
       ],
       "provinces": [
-        "重庆"
+        "重庆",
+        "内蒙古",
+        "浙江",
+        "四川",
+        "贵州",
+        "新疆"
       ],
       "locations": [
         {
@@ -358725,7 +359066,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-09-07T17:30:44.486Z",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://hxhk.zhiye.com/campus/jobs",
@@ -370195,14 +370536,23 @@
     },
     {
       "company": "新和成",
-      "title": "新未来计划-供应链方向、设备/原料采购专员",
+      "title": "日本研究院 研究员（日语要求）、IT岗 运维工程师、IT岗 智能制造顾问（2027）、IT岗 开发工程师（2027）、IT岗 体系管理专员、战略合作与支持专员（新加坡）、战略合作与支持专员（日本）、技术引进顾问（硕士/博士）、工艺包开发工程师、研究员-请根据工作职责选择后续投递方向、博士研究员-请根据工作职责选择后续投递方向、新未来计划-浙江 等80个校招岗位",
       "program": null,
       "industry": "医疗/医药/生物",
       "cities": [
-        "绍兴"
+        "绍兴",
+        "日本",
+        "新加坡共和国",
+        "天津",
+        "绥化",
+        "潍坊",
+        "新加坡"
       ],
       "provinces": [
-        "浙江"
+        "浙江",
+        "天津",
+        "黑龙江",
+        "山东"
       ],
       "locations": [
         {
@@ -370213,7 +370563,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-20T16:03:28+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://xinhecheng1.zhiye.com/jobs?activityGuid=4e76a37d-15f0-48f3-9e71-d9991a0e2c2d",
@@ -370221,7 +370571,7 @@
       "verification": "unverified",
       "id": "manual-aa742465ceaede36947d",
       "manualUpdatedAt": "2026-10-09T05:17:08.197Z",
-      "family": "职能"
+      "family": "后端开发、职能、研发/工程"
     },
     {
       "company": "泛林集团",
@@ -371703,9 +372053,14 @@
       "program": null,
       "industry": "IT/互联网/游戏",
       "cities": [
-        "全国"
+        "全国",
+        "连云港",
+        "嘉兴"
       ],
-      "provinces": [],
+      "provinces": [
+        "江苏",
+        "浙江"
+      ],
       "locations": [
         {
           "city": "全国",
@@ -371715,7 +372070,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-10-09T12:04:25+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://satlpec.zhiye.com/campus/jobs",
@@ -378429,11 +378784,12 @@
     },
     {
       "company": "皖仪科技",
-      "title": "研发与技术核心应用与解决方案销售与市场 供应链与计划 制造与售后服务",
+      "title": "【2027届校招】人力资源专员、【2027届校招】分析仪器博士研究员、【2027届校招】系统/产品工程师、【2027届校招】机械工程师、【2027届校招】软件测试工程师、【2027届校招】固件工程师、【2027届校招】分析仪器管培生-营销类、【2027届校招】电气工程师、【2027届校招】硬件工程师、【2027届校招】软件工程师、【2027届校招】测试工程师、【2027届校招】应用工程师 等22个校招岗位",
       "program": null,
       "industry": "制造业",
       "cities": [
-        "合肥"
+        "合肥",
+        "全国"
       ],
       "provinces": [
         "安徽"
@@ -378447,7 +378803,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-10-21T16:35:48+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://wayeal.zhiye.com/campus/jobs",
@@ -378455,7 +378811,7 @@
       "verification": "unverified",
       "id": "manual-31f341826d4d12be944f",
       "manualUpdatedAt": "2026-10-09T05:17:08.197Z",
-      "family": "销售/市场、职能"
+      "family": "测试、硬件/嵌入式、销售/市场、管培生、职能、研发/工程"
     },
     {
       "company": "机械革命",
@@ -384744,12 +385100,21 @@
       "cities": [
         "上海",
         "苏州",
-        "长沙"
+        "长沙",
+        "常州",
+        "嘉兴",
+        "厦门",
+        "宜宾",
+        "其他",
+        "溧阳"
       ],
       "provinces": [
         "上海",
         "江苏",
-        "湖南"
+        "湖南",
+        "浙江",
+        "福建",
+        "四川"
       ],
       "locations": [
         {
@@ -384768,7 +385133,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-25T09:54:52+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://bozhon3.zhiye.com/",
@@ -402053,7 +402418,8 @@
         "成都",
         "宁波",
         "上海",
-        "西安"
+        "西安",
+        "杭州"
       ],
       "provinces": [
         "四川",
@@ -402082,7 +402448,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-09-22T16:36:14+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://ginlong.zhiye.com/campus/jobs",
@@ -403224,9 +403590,89 @@
       "industry": "农林牧渔",
       "cities": [
         "海外",
-        "全国"
+        "全国",
+        "印度尼西亚",
+        "厄瓜多尔",
+        "天津",
+        "唐山",
+        "山西",
+        "内蒙古",
+        "辽宁",
+        "黑龙江",
+        "徐州",
+        "常州",
+        "苏州",
+        "南通",
+        "镇江",
+        "宿迁",
+        "嘉兴",
+        "湖州",
+        "绍兴",
+        "丽水",
+        "马鞍山",
+        "福州",
+        "三明",
+        "漳州",
+        "赣州",
+        "宜春",
+        "东营",
+        "济宁",
+        "河南",
+        "黄石",
+        "岳阳",
+        "广州",
+        "韶关",
+        "珠海",
+        "佛山",
+        "江门",
+        "湛江",
+        "肇庆",
+        "惠州",
+        "汕尾",
+        "阳江",
+        "清远",
+        "中山",
+        "云浮",
+        "梧州",
+        "贵港",
+        "玉林",
+        "儋州",
+        "自贡",
+        "乐山",
+        "黔南布依族苗族自治州",
+        "云南",
+        "甘肃",
+        "新疆",
+        "溧阳",
+        "恩平",
+        "廉江",
+        "罗定"
       ],
-      "provinces": [],
+      "provinces": [
+        "天津",
+        "河北",
+        "山西",
+        "内蒙古",
+        "辽宁",
+        "黑龙江",
+        "江苏",
+        "浙江",
+        "安徽",
+        "福建",
+        "江西",
+        "山东",
+        "河南",
+        "湖北",
+        "湖南",
+        "广东",
+        "广西",
+        "海南",
+        "四川",
+        "贵州",
+        "云南",
+        "甘肃",
+        "新疆"
+      ],
       "locations": [
         {
           "city": "海外",
@@ -403240,7 +403686,7 @@
       "cohort": "2026届、2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-12T08:51:50+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://haid1.zhiye.com/campus/jobs?queryId=11f0a7c9-46ca-4587-8c8c-3022a325ec6b",
@@ -414249,10 +414695,39 @@
       "program": null,
       "industry": "电子/通信/半导体、制造业",
       "cities": [
-        "杭州"
+        "杭州",
+        "全国",
+        "北京",
+        "天津",
+        "大连",
+        "上海",
+        "南京",
+        "苏州",
+        "青岛",
+        "郑州",
+        "武汉",
+        "深圳",
+        "东莞",
+        "广西",
+        "成都",
+        "西安",
+        "香港"
       ],
       "provinces": [
-        "浙江"
+        "浙江",
+        "北京",
+        "天津",
+        "辽宁",
+        "上海",
+        "江苏",
+        "山东",
+        "河南",
+        "湖北",
+        "广东",
+        "广西",
+        "四川",
+        "陕西",
+        "香港"
       ],
       "locations": [
         {
@@ -414263,7 +414738,7 @@
       "cohort": "2026届、2027届",
       "batch": "秋招提前批",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-05T16:38:47.618Z",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://shining3d.zhiye.com/jobs?activityGuid=a48d1da6-94be-4b09-b1ab-d21603e91ba5",
@@ -427349,7 +427824,7 @@
       "cohort": "2027届",
       "batch": "秋招提前批",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-10-12T16:29:12+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://t-ray.zhiye.com/campus/jobs",
@@ -429360,18 +429835,23 @@
     },
     {
       "company": "新和成",
-      "title": "管培类 营销类 采购类 研发类 财经类 IT类 战略类 安环类 设备类 工程类等",
+      "title": "日本研究院 研究员（日语要求）、IT岗 运维工程师、IT岗 智能制造顾问（2027）、IT岗 开发工程师（2027）、IT岗 体系管理专员、战略合作与支持专员（新加坡）、战略合作与支持专员（日本）、技术引进顾问（硕士/博士）、工艺包开发工程师、研究员-请根据工作职责选择后续投递方向、博士研究员-请根据工作职责选择后续投递方向、新未来计划-浙江 等80个校招岗位",
       "program": null,
       "industry": "医疗/医药/生物",
       "cities": [
         "绥化",
         "天津",
-        "潍坊"
+        "潍坊",
+        "日本",
+        "新加坡共和国",
+        "绍兴",
+        "新加坡"
       ],
       "provinces": [
         "黑龙江",
         "天津",
-        "山东"
+        "山东",
+        "浙江"
       ],
       "locations": [
         {
@@ -429390,7 +429870,7 @@
       "cohort": "2027届",
       "batch": "秋招提前批",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-20T16:03:28+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://xinhecheng1.zhiye.com/campus",
@@ -429398,7 +429878,7 @@
       "verification": "unverified",
       "id": "manual-e114adf70131e66a623f",
       "manualUpdatedAt": "2026-10-09T05:17:08.197Z",
-      "family": "软件开发（综合）、金融/财务、销售/市场、管培生、职能"
+      "family": "后端开发、职能、研发/工程"
     },
     {
       "company": "建经投资咨询",
@@ -431822,10 +432302,88 @@
       "program": null,
       "industry": "农林牧渔",
       "cities": [
-        "广州"
+        "广州",
+        "全国",
+        "印度尼西亚",
+        "厄瓜多尔",
+        "天津",
+        "唐山",
+        "山西",
+        "内蒙古",
+        "辽宁",
+        "黑龙江",
+        "徐州",
+        "常州",
+        "苏州",
+        "南通",
+        "镇江",
+        "宿迁",
+        "嘉兴",
+        "湖州",
+        "绍兴",
+        "丽水",
+        "马鞍山",
+        "福州",
+        "三明",
+        "漳州",
+        "赣州",
+        "宜春",
+        "东营",
+        "济宁",
+        "河南",
+        "黄石",
+        "岳阳",
+        "韶关",
+        "珠海",
+        "佛山",
+        "江门",
+        "湛江",
+        "肇庆",
+        "惠州",
+        "汕尾",
+        "阳江",
+        "清远",
+        "中山",
+        "云浮",
+        "梧州",
+        "贵港",
+        "玉林",
+        "儋州",
+        "自贡",
+        "乐山",
+        "黔南布依族苗族自治州",
+        "云南",
+        "甘肃",
+        "新疆",
+        "溧阳",
+        "恩平",
+        "廉江",
+        "罗定"
       ],
       "provinces": [
-        "广东"
+        "广东",
+        "天津",
+        "河北",
+        "山西",
+        "内蒙古",
+        "辽宁",
+        "黑龙江",
+        "江苏",
+        "浙江",
+        "安徽",
+        "福建",
+        "江西",
+        "山东",
+        "河南",
+        "湖北",
+        "湖南",
+        "广西",
+        "海南",
+        "四川",
+        "贵州",
+        "云南",
+        "甘肃",
+        "新疆"
       ],
       "locations": [
         {
@@ -431836,7 +432394,7 @@
       "cohort": "2027届",
       "batch": "秋招提前批",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-12T08:51:50+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://haid1.zhiye.com/campus/detail?jobAdId=b5857a4d-11bb-499c-b392-02e736c86c42",
@@ -432422,10 +432980,23 @@
       "program": null,
       "industry": "交通/物流/仓储",
       "cities": [
-        "重庆"
+        "重庆",
+        "包头",
+        "衢州",
+        "成都",
+        "贵阳",
+        "巴音郭楞蒙古自治州",
+        "库尔勒",
+        "阿克苏",
+        "喀什"
       ],
       "provinces": [
-        "重庆"
+        "重庆",
+        "内蒙古",
+        "浙江",
+        "四川",
+        "贵州",
+        "新疆"
       ],
       "locations": [
         {
@@ -432436,7 +433007,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-09-07T17:30:44.486Z",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://hxhk.zhiye.com/",
@@ -432484,7 +433055,8 @@
       "cities": [
         "东莞",
         "苏州",
-        "唐山"
+        "唐山",
+        "昆山"
       ],
       "provinces": [
         "广东",
@@ -432508,7 +433080,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-10-27T15:49:14+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://strongtc.zhiye.com/campus/jobs",
@@ -437910,9 +438482,89 @@
       "program": null,
       "industry": "农林牧渔",
       "cities": [
-        "全国"
+        "全国",
+        "印度尼西亚",
+        "厄瓜多尔",
+        "天津",
+        "唐山",
+        "山西",
+        "内蒙古",
+        "辽宁",
+        "黑龙江",
+        "徐州",
+        "常州",
+        "苏州",
+        "南通",
+        "镇江",
+        "宿迁",
+        "嘉兴",
+        "湖州",
+        "绍兴",
+        "丽水",
+        "马鞍山",
+        "福州",
+        "三明",
+        "漳州",
+        "赣州",
+        "宜春",
+        "东营",
+        "济宁",
+        "河南",
+        "黄石",
+        "岳阳",
+        "广州",
+        "韶关",
+        "珠海",
+        "佛山",
+        "江门",
+        "湛江",
+        "肇庆",
+        "惠州",
+        "汕尾",
+        "阳江",
+        "清远",
+        "中山",
+        "云浮",
+        "梧州",
+        "贵港",
+        "玉林",
+        "儋州",
+        "自贡",
+        "乐山",
+        "黔南布依族苗族自治州",
+        "云南",
+        "甘肃",
+        "新疆",
+        "溧阳",
+        "恩平",
+        "廉江",
+        "罗定"
       ],
-      "provinces": [],
+      "provinces": [
+        "天津",
+        "河北",
+        "山西",
+        "内蒙古",
+        "辽宁",
+        "黑龙江",
+        "江苏",
+        "浙江",
+        "安徽",
+        "福建",
+        "江西",
+        "山东",
+        "河南",
+        "湖北",
+        "湖南",
+        "广东",
+        "广西",
+        "海南",
+        "四川",
+        "贵州",
+        "云南",
+        "甘肃",
+        "新疆"
+      ],
       "locations": [
         {
           "city": "全国",
@@ -437922,7 +438574,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-12T08:51:50+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://haid1.zhiye.com/campus/jobs",
@@ -442512,13 +443164,21 @@
         "成都",
         "合肥",
         "眉山",
-        "武汉"
+        "武汉",
+        "厦门",
+        "枣庄",
+        "江门",
+        "自贡",
+        "滕州"
       ],
       "provinces": [
         "江苏",
         "四川",
         "安徽",
-        "湖北"
+        "湖北",
+        "福建",
+        "山东",
+        "广东"
       ],
       "locations": [
         {
@@ -442545,7 +443205,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-13T17:46:33+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://calbjs.zhiye.com/campus/jobs",
@@ -446265,7 +446925,10 @@
         "乌鲁木齐",
         "五家渠",
         "仙桃",
-        "长沙"
+        "长沙",
+        "昌吉回族自治州",
+        "克孜勒苏柯尔克孜自治州",
+        "胡杨河"
       ],
       "provinces": [
         "新疆",
@@ -446332,7 +446995,7 @@
       "cohort": "2026届、2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-23T10:48:53+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://tycoon.zhiye.com/campus/jobs",
@@ -447416,7 +448079,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-03T00:25:43+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://qilu-pharma.zhiye.com/campus/jobs",
@@ -452281,12 +452944,17 @@
       "cities": [
         "绍兴",
         "绥化",
-        "天津"
+        "天津",
+        "日本",
+        "新加坡共和国",
+        "潍坊",
+        "新加坡"
       ],
       "provinces": [
         "浙江",
         "黑龙江",
-        "天津"
+        "天津",
+        "山东"
       ],
       "locations": [
         {
@@ -452305,7 +452973,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-20T16:03:28+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://xinhecheng1.zhiye.com/jobs?queryId=86362023-1e4b-4515-82e5-0633827ab243",
@@ -457636,10 +458304,19 @@
       "program": null,
       "industry": "能源/化工/环保",
       "cities": [
-        "绍兴"
+        "绍兴",
+        "日本",
+        "新加坡共和国",
+        "天津",
+        "绥化",
+        "潍坊",
+        "新加坡"
       ],
       "provinces": [
-        "浙江"
+        "浙江",
+        "天津",
+        "黑龙江",
+        "山东"
       ],
       "locations": [
         {
@@ -457650,7 +458327,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-20T16:03:28+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://xinhecheng1.zhiye.com/campus/jobs?2=%5B%7B%22id%22%3A%2217%22%2C%22label%22",
@@ -458267,7 +458944,7 @@
     },
     {
       "company": "微谱科技集团",
-      "title": "销售类技术类职能类运营类综管类",
+      "title": "销售管培生（27届校招）、技术管培生（27届校招）、实验室工程师管培生（27届校招）、计量工程师管培生（27届校招）、集团战将管培生（27届校招）、助理检测工程师管培生（27届校招）、质量管培生（27届校招）、财务管培生（27届校招）、环境销售管培生（27届校招）、环境技术管培生（27届校招）、汽车电子技术管培生（27届校招）、汽车内外饰技术支持管培生（27届校招） 等27个校招岗位",
       "program": null,
       "industry": "专业服务",
       "cities": [
@@ -458286,7 +458963,12 @@
         "武汉",
         "西安",
         "扬州",
-        "郑州"
+        "郑州",
+        "全国",
+        "天津",
+        "沈阳",
+        "南京",
+        "青岛"
       ],
       "provinces": [
         "北京",
@@ -458299,7 +458981,10 @@
         "江苏",
         "湖北",
         "陕西",
-        "河南"
+        "河南",
+        "天津",
+        "辽宁",
+        "山东"
       ],
       "locations": [
         {
@@ -458367,10 +459052,10 @@
           "province": "河南"
         }
       ],
-      "cohort": "2027届",
+      "cohort": "2027届、2026届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-11T10:39:24+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://weipugroup.zhiye.com/campus/jobs",
@@ -458378,7 +459063,7 @@
       "verification": "unverified",
       "id": "manual-2f6dbef35e7085e6fe85",
       "manualUpdatedAt": "2026-11-21T08:50:23.245Z",
-      "family": "运营、销售/市场、职能"
+      "family": "硬件/嵌入式、金融/财务、销售/市场、管培生"
     },
     {
       "company": "卡尔倍可",
@@ -459377,7 +460062,7 @@
       "cohort": "2027届",
       "batch": "秋招专场",
       "deadline": null,
-      "updatedAt": null,
+      "updatedAt": "2026-09-18T17:05:19+08:00",
       "source": "手动导入",
       "sourceUrl": null,
       "applyUrl": "https://grainrain.zhiye.com/social/jobs?LocId=%5B%7B%22id%22%3A%224401%22%2C%22label%22%3A%22%E5%B9%BF%E5%B7%9E%E5%B8%82%22%7D%5D",
