@@ -3,12 +3,14 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { mergeCampusJobs, normalizeOffer, normalizeXixicc, validateDataset } from './job-data.mjs';
 import { enrichJobsWithBeisen } from './beisen-enrich.mjs';
+import { enrichJobsWithFeishu } from './feishu-enrich.mjs';
 
 const DATA_PATH = new URL('../public/jobs.json', import.meta.url);
 const API = 'https://openapi.offerxiansheng.com/backend-service/open/v1/campus-recruit';
 const permissionOffer = process.env.OFFER_PUBLICATION_APPROVED === 'true';
 const permissionXixicc = process.env.XIXICC_REUSE_APPROVED === 'true';
 const permissionBeisen = process.env.BEISEN_ENRICH_ENABLED === 'true';
+const permissionFeishu = process.env.FEISHU_ENRICH_ENABLED === 'true';
 const maxRecentPages = Number.parseInt(process.env.MAX_RECENT_PAGES || '1', 10);
 const recentPageSize = Number.parseInt(process.env.RECENT_PAGE_SIZE || '100', 10);
 
@@ -67,16 +69,19 @@ export async function syncCampusDataset({
   permissionOffer = false,
   permissionXixicc = false,
   permissionBeisen = false,
+  permissionFeishu = false,
   offerApiKey = '',
   fetchOffer = getOfferJobs,
   fetchXixicc = getXixiccJobs,
   enrichBeisen = enrichJobsWithBeisen,
   beisenOptions = {},
+  enrichFeishu = enrichJobsWithFeishu,
+  feishuOptions = {},
   warn = console.warn,
   log = console.log,
 }) {
   const validatedPrevious = validateDataset(previous);
-  if (!permissionOffer && !permissionXixicc && !permissionBeisen) {
+  if (!permissionOffer && !permissionXixicc && !permissionBeisen && !permissionFeishu) {
     log('数据发布许可尚未配置；保留当前数据。');
     return null;
   }
@@ -110,7 +115,7 @@ export async function syncCampusDataset({
   if (succeededSources === 0 && failedSources > 0) {
     throw new Error('所有已启用数据源均抓取失败；保留旧数据');
   }
-  if (succeededSources === 0 && (!permissionBeisen || validatedPrevious.mode !== 'live')) {
+  if (succeededSources === 0 && ((!permissionBeisen && !permissionFeishu) || validatedPrevious.mode !== 'live')) {
     return null;
   }
   if (!incoming.length && validatedPrevious.mode !== 'live') {
@@ -132,6 +137,16 @@ export async function syncCampusDataset({
       warn(`::warning::北森官方增强失败（${error.message}）；保留已合并记录`);
     }
   }
+  if (permissionFeishu) {
+    try {
+      const enriched = await enrichFeishu(jobs, { today, log, ...feishuOptions });
+      if (Array.isArray(enriched?.jobs) && enriched.jobs.length) {
+        jobs = enriched.jobs;
+      }
+    } catch (error) {
+      warn(`::warning::飞书招聘官方增强失败（${error.message}）；保留已合并记录`);
+    }
+  }
   return validateDataset({ schemaVersion: 1, generatedAt: new Date().toISOString(), mode: 'live', jobs });
 }
 
@@ -143,6 +158,7 @@ async function main() {
     permissionOffer,
     permissionXixicc,
     permissionBeisen,
+    permissionFeishu,
     offerApiKey: process.env.OFFER_CAMPUS_API_KEY,
   });
   if (!dataset) return;

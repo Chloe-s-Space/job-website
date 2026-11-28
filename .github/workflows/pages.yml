@@ -39,12 +39,13 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Refresh campus sources
-        if: github.event_name != 'push' && (vars.OFFER_PUBLICATION_APPROVED == 'true' || vars.XIXICC_REUSE_APPROVED == 'true' || vars.BEISEN_ENRICH_ENABLED == 'true')
+        if: github.event_name != 'push' && (vars.OFFER_PUBLICATION_APPROVED == 'true' || vars.XIXICC_REUSE_APPROVED == 'true' || vars.BEISEN_ENRICH_ENABLED == 'true' || vars.FEISHU_ENRICH_ENABLED == 'true')
         env:
           OFFER_CAMPUS_API_KEY: ${{ secrets.OFFER_CAMPUS_API_KEY }}
           OFFER_PUBLICATION_APPROVED: ${{ vars.OFFER_PUBLICATION_APPROVED }}
           XIXICC_REUSE_APPROVED: ${{ vars.XIXICC_REUSE_APPROVED }}
           BEISEN_ENRICH_ENABLED: ${{ vars.BEISEN_ENRICH_ENABLED }}
+          FEISHU_ENRICH_ENABLED: ${{ vars.FEISHU_ENRICH_ENABLED }}
           BACKFILL_OFFER: ${{ inputs.backfill_offer || 'false' }}
           BACKFILL_TECH: ${{ inputs.backfill_tech || 'false' }}
           RECENT_PAGE_SIZE: ${{ inputs.recent_page_size || '100' }}
@@ -61,7 +62,7 @@ jobs:
       - run: npm test
       - run: npm run check:data
       - name: Save refreshed JSON
-        if: github.event_name != 'push' && (vars.OFFER_PUBLICATION_APPROVED == 'true' || vars.XIXICC_REUSE_APPROVED == 'true' || vars.BEISEN_ENRICH_ENABLED == 'true')
+        if: github.event_name != 'push' && (vars.OFFER_PUBLICATION_APPROVED == 'true' || vars.XIXICC_REUSE_APPROVED == 'true' || vars.BEISEN_ENRICH_ENABLED == 'true' || vars.FEISHU_ENRICH_ENABLED == 'true')
         run: |
           if ! git diff --quiet -- public/jobs.json; then
             git config user.name 'github-actions[bot]'
